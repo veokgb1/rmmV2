@@ -1,0 +1,364 @@
+{
+  "generatedAt": "2026-03-22T14:05:05.531Z",
+  "collection": "transactions",
+  "totals": {
+    "scannedDocs": 80,
+    "distinctLegacyRows": 60,
+    "duplicateGroups": 10,
+    "deleteDocCount": 20,
+    "noLegacyRowDocs": 0
+  },
+  "skippedNoLegacyDocIds": [],
+  "groups": [
+    {
+      "_legacyRowNum": 3,
+      "keepDocId": "LCtH6E96M3Wy1YHQiYcY",
+      "deleteDocIds": [
+        "KxkUumIXZbxoDDyPPwXS",
+        "KS3CC8GOEqON9QDgxtZE"
+      ],
+      "reason": "keep LCtH6E96M3Wy1YHQiYcY: filledScore=11, linkScore=2, updatedMs=1774187646265, createdMs=1774187605198, duplicates=3",
+      "candidates": [
+        {
+          "docId": "KS3CC8GOEqON9QDgxtZE",
+          "voucherIdsCount": 1,
+          "voucherRefIdsCount": 1,
+          "voucherStoragePathsCount": 1,
+          "hasUpdatedAt": true,
+          "hasCreatedAt": true
+        },
+        {
+          "docId": "KxkUumIXZbxoDDyPPwXS",
+          "voucherIdsCount": 1,
+          "voucherRefIdsCount": 1,
+          "voucherStoragePathsCount": 1,
+          "hasUpdatedAt": true,
+          "hasCreatedAt": true
+        },
+        {
+          "docId": "LCtH6E96M3Wy1YHQiYcY",
+          "voucherIdsCount": 1,
+          "voucherRefIdsCount": 1,
+          "voucherStoragePathsCount": 1,
+          "hasUpdatedAt": true,
+          "hasCreatedAt": true
+        }
+      ]
+    },
+    {
+      "_legacyRowNum": 4,
+      "keepDocId": "WOUtsL0PJS55oOd4OfeZ",
+      "deleteDocIds": [
+        "nwbR9NHTgbFAEhtuyJR9",
+        "A9mreHSCniSgSGaULN94"
+      ],
+      "reason": "keep WOUtsL0PJS55oOd4OfeZ: filledScore=11, linkScore=2, updatedMs=1774187652035, createdMs=1774187605200, duplicates=3",
+      "candidates": [
+        {
+          "docId": "A9mreHSCniSgSGaULN94",
+          "voucherIdsCount": 1,
+          "voucherRefIdsCount": 1,
+          "voucherStoragePathsCount": 1,
+          "hasUpdatedAt": true,
+          "hasCreatedAt": true
+        },
+        {
+          "docId": "WOUtsL0PJS55oOd4OfeZ",
+          "voucherIdsCount": 1,
+          "voucherRefIdsCount": 1,
+          "voucherStoragePathsCount": 1,
+          "hasUpdatedAt": true,
+          "hasCreatedAt": true
+        },
+        {
+          "docId": "nwbR9NHTgbFAEhtuyJR9",
+          "voucherIdsCount": 1,
+          "voucherRefIdsCount": 1,
+          "voucherStoragePathsCount": 1,
+          "hasUpdatedAt": true,
+          "hasCreatedAt": true
+        }
+      ]
+    },
+    {
+      "_legacyRowNum": 5,
+      "keepDocId": "EVk5kc01UUS0AFEv8jYO",
+      "deleteDocIds": [
+        "zvDL9g9K67VHankLNN4X",
+        "WfPZ97nAYk0MzsIIhK1c"
+      ],
+      "reason": "keep EVk5kc01UUS0AFEv8jYO: filledScore=11, linkScore=2, updatedMs=1774187643127, createdMs=1774187605201, duplicates=3",
+      "candidates": [
+        {
+          "docId": "EVk5kc01UUS0AFEv8jYO",
+          "voucherIdsCount": 1,
+          "voucherRefIdsCount": 1,
+          "voucherStoragePathsCount": 1,
+          "hasUpdatedAt": true,
+          "hasCreatedAt": true
+        },
+        {
+          "docId": "WfPZ97nAYk0MzsIIhK1c",
+          "voucherIdsCount": 1,
+          "voucherRefIdsCount": 1,
+          "voucherStoragePathsCount": 1,
+          "hasUpdatedAt": true,
+          "hasCreatedAt": true
+        },
+        {
+          "docId": "zvDL9g9K67VHankLNN4X",
+          "voucherIdsCount": 1,
+          "voucherRefIdsCount": 1,
+          "voucherStoragePathsCount": 1,
+          "hasUpdatedAt": true,
+          "hasCreatedAt": true
+        }
+      ]
+    },
+    {
+      "_legacyRowNum": 6,
+      "keepDocId": "X0lMR9dnyJSP56MTF0FF",
+      "deleteDocIds": [
+        "uFdjgsmAu60WyJuBt1Pu",
+        "2M9pxlIXVePYf1S5WAG1"
+      ],
+      "reason": "keep X0lMR9dnyJSP56MTF0FF: filledScore=11, linkScore=2, updatedMs=1774187652718, createdMs=1774187605201, duplicates=3",
+      "candidates": [
+        {
+          "docId": "2M9pxlIXVePYf1S5WAG1",
+          "voucherIdsCount": 1,
+          "voucherRefIdsCount": 1,
+          "voucherStoragePathsCount": 1,
+          "hasUpdatedAt": true,
+          "hasCreatedAt": true
+        },
+        {
+          "docId": "X0lMR9dnyJSP56MTF0FF",
+          "voucherIdsCount": 1,
+          "voucherRefIdsCount": 1,
+          "voucherStoragePathsCount": 1,
+          "hasUpdatedAt": true,
+          "hasCreatedAt": true
+        },
+        {
+          "docId": "uFdjgsmAu60WyJuBt1Pu",
+          "voucherIdsCount": 1,
+          "voucherRefIdsCount": 1,
+          "voucherStoragePathsCount": 1,
+          "hasUpdatedAt": true,
+          "hasCreatedAt": true
+        }
+      ]
+    },
+    {
+      "_legacyRowNum": 7,
+      "keepDocId": "96ru3FQU59zYnOSFN2Y9",
+      "deleteDocIds": [
+        "pjnq7OmJjWS4Lc5kf7zp",
+        "oh5o84kHbjHEov0RAmO9"
+      ],
+      "reason": "keep 96ru3FQU59zYnOSFN2Y9: filledScore=11, linkScore=2, updatedMs=1774187640873, createdMs=1774187605202, duplicates=3",
+      "candidates": [
+        {
+          "docId": "96ru3FQU59zYnOSFN2Y9",
+          "voucherIdsCount": 1,
+          "voucherRefIdsCount": 1,
+          "voucherStoragePathsCount": 1,
+          "hasUpdatedAt": true,
+          "hasCreatedAt": true
+        },
+        {
+          "docId": "oh5o84kHbjHEov0RAmO9",
+          "voucherIdsCount": 1,
+          "voucherRefIdsCount": 1,
+          "voucherStoragePathsCount": 1,
+          "hasUpdatedAt": true,
+          "hasCreatedAt": true
+        },
+        {
+          "docId": "pjnq7OmJjWS4Lc5kf7zp",
+          "voucherIdsCount": 1,
+          "voucherRefIdsCount": 1,
+          "voucherStoragePathsCount": 1,
+          "hasUpdatedAt": true,
+          "hasCreatedAt": true
+        }
+      ]
+    },
+    {
+      "_legacyRowNum": 8,
+      "keepDocId": "5cPHfYZMxdqcTb1VEygg",
+      "deleteDocIds": [
+        "SbTr8cgpDJmeBohAq1ug",
+        "DqDjbQfF0RxUjTjPzuxS"
+      ],
+      "reason": "keep 5cPHfYZMxdqcTb1VEygg: filledScore=11, linkScore=2, updatedMs=1774187639620, createdMs=1774187605202, duplicates=3",
+      "candidates": [
+        {
+          "docId": "5cPHfYZMxdqcTb1VEygg",
+          "voucherIdsCount": 1,
+          "voucherRefIdsCount": 1,
+          "voucherStoragePathsCount": 1,
+          "hasUpdatedAt": true,
+          "hasCreatedAt": true
+        },
+        {
+          "docId": "DqDjbQfF0RxUjTjPzuxS",
+          "voucherIdsCount": 1,
+          "voucherRefIdsCount": 1,
+          "voucherStoragePathsCount": 1,
+          "hasUpdatedAt": true,
+          "hasCreatedAt": true
+        },
+        {
+          "docId": "SbTr8cgpDJmeBohAq1ug",
+          "voucherIdsCount": 1,
+          "voucherRefIdsCount": 1,
+          "voucherStoragePathsCount": 1,
+          "hasUpdatedAt": true,
+          "hasCreatedAt": true
+        }
+      ]
+    },
+    {
+      "_legacyRowNum": 9,
+      "keepDocId": "Jr0n4p2kYx5JOcAwaxcF",
+      "deleteDocIds": [
+        "n0GHvOaZAwWonmuqdNDR",
+        "btkAFIlfC2T90FwxZeQl"
+      ],
+      "reason": "keep Jr0n4p2kYx5JOcAwaxcF: filledScore=11, linkScore=2, updatedMs=1774187645434, createdMs=1774187605202, duplicates=3",
+      "candidates": [
+        {
+          "docId": "Jr0n4p2kYx5JOcAwaxcF",
+          "voucherIdsCount": 1,
+          "voucherRefIdsCount": 1,
+          "voucherStoragePathsCount": 1,
+          "hasUpdatedAt": true,
+          "hasCreatedAt": true
+        },
+        {
+          "docId": "btkAFIlfC2T90FwxZeQl",
+          "voucherIdsCount": 1,
+          "voucherRefIdsCount": 1,
+          "voucherStoragePathsCount": 1,
+          "hasUpdatedAt": true,
+          "hasCreatedAt": true
+        },
+        {
+          "docId": "n0GHvOaZAwWonmuqdNDR",
+          "voucherIdsCount": 1,
+          "voucherRefIdsCount": 1,
+          "voucherStoragePathsCount": 1,
+          "hasUpdatedAt": true,
+          "hasCreatedAt": true
+        }
+      ]
+    },
+    {
+      "_legacyRowNum": 10,
+      "keepDocId": "2Nn1wXXMyeOjVs4DwqOl",
+      "deleteDocIds": [
+        "S0vSdWTYAVWhQldQjEGB",
+        "6GWap82EXHLVKKkyz0yF"
+      ],
+      "reason": "keep 2Nn1wXXMyeOjVs4DwqOl: filledScore=11, linkScore=2, updatedMs=1774187638917, createdMs=1774187605202, duplicates=3",
+      "candidates": [
+        {
+          "docId": "2Nn1wXXMyeOjVs4DwqOl",
+          "voucherIdsCount": 1,
+          "voucherRefIdsCount": 1,
+          "voucherStoragePathsCount": 1,
+          "hasUpdatedAt": true,
+          "hasCreatedAt": true
+        },
+        {
+          "docId": "6GWap82EXHLVKKkyz0yF",
+          "voucherIdsCount": 1,
+          "voucherRefIdsCount": 1,
+          "voucherStoragePathsCount": 1,
+          "hasUpdatedAt": true,
+          "hasCreatedAt": true
+        },
+        {
+          "docId": "S0vSdWTYAVWhQldQjEGB",
+          "voucherIdsCount": 1,
+          "voucherRefIdsCount": 1,
+          "voucherStoragePathsCount": 1,
+          "hasUpdatedAt": true,
+          "hasCreatedAt": true
+        }
+      ]
+    },
+    {
+      "_legacyRowNum": 11,
+      "keepDocId": "MbWR5aGZPK2pJ4FfiOLm",
+      "deleteDocIds": [
+        "b1FvuNoGz2SbSKqDlr1c",
+        "IXYoVtXyl2sfAb6JnETI"
+      ],
+      "reason": "keep MbWR5aGZPK2pJ4FfiOLm: filledScore=11, linkScore=2, updatedMs=1774187646827, createdMs=1774187605203, duplicates=3",
+      "candidates": [
+        {
+          "docId": "IXYoVtXyl2sfAb6JnETI",
+          "voucherIdsCount": 1,
+          "voucherRefIdsCount": 1,
+          "voucherStoragePathsCount": 1,
+          "hasUpdatedAt": true,
+          "hasCreatedAt": true
+        },
+        {
+          "docId": "MbWR5aGZPK2pJ4FfiOLm",
+          "voucherIdsCount": 1,
+          "voucherRefIdsCount": 1,
+          "voucherStoragePathsCount": 1,
+          "hasUpdatedAt": true,
+          "hasCreatedAt": true
+        },
+        {
+          "docId": "b1FvuNoGz2SbSKqDlr1c",
+          "voucherIdsCount": 1,
+          "voucherRefIdsCount": 1,
+          "voucherStoragePathsCount": 1,
+          "hasUpdatedAt": true,
+          "hasCreatedAt": true
+        }
+      ]
+    },
+    {
+      "_legacyRowNum": 12,
+      "keepDocId": "QEjKWntluLCgrZ6ZjUxz",
+      "deleteDocIds": [
+        "tAkI79hcuHllo1TRH4tf",
+        "fDNbCyH5JpITrCQaT186"
+      ],
+      "reason": "keep QEjKWntluLCgrZ6ZjUxz: filledScore=11, linkScore=2, updatedMs=1774187649291, createdMs=1774187605203, duplicates=3",
+      "candidates": [
+        {
+          "docId": "QEjKWntluLCgrZ6ZjUxz",
+          "voucherIdsCount": 1,
+          "voucherRefIdsCount": 1,
+          "voucherStoragePathsCount": 1,
+          "hasUpdatedAt": true,
+          "hasCreatedAt": true
+        },
+        {
+          "docId": "fDNbCyH5JpITrCQaT186",
+          "voucherIdsCount": 1,
+          "voucherRefIdsCount": 1,
+          "voucherStoragePathsCount": 1,
+          "hasUpdatedAt": true,
+          "hasCreatedAt": true
+        },
+        {
+          "docId": "tAkI79hcuHllo1TRH4tf",
+          "voucherIdsCount": 1,
+          "voucherRefIdsCount": 1,
+          "voucherStoragePathsCount": 1,
+          "hasUpdatedAt": true,
+          "hasCreatedAt": true
+        }
+      ]
+    }
+  ]
+}

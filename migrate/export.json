@@ -1,0 +1,1047 @@
+{
+  "checksum": {
+    "totalRows": 60,
+    "totalVoucherFiles": 63,
+    "rowsWithVouchers": 60,
+    "totalAmount": 88074.31
+  },
+  "transactions": [
+    {
+      "_legacyRowNum": 3,
+      "date": "2026-03-01",
+      "month": "2026-03",
+      "type": "支出",
+      "category": "护工/护理费",
+      "amount": 1080,
+      "summary": "转给德济四楼护工史阿姨2月份护工费",
+      "source": "1.可视对账录入",
+      "status": "智能关联",
+      "voucherIds": [
+        "11pZAd5tLG0HpxPza16M8yM0Row2sFdPo"
+      ]
+    },
+    {
+      "_legacyRowNum": 4,
+      "date": "2026-02-23",
+      "month": "2026-02",
+      "type": "支出",
+      "category": "医疗/药费",
+      "amount": 38,
+      "summary": "救护车",
+      "source": "3.批量补录数据",
+      "status": "智能关联",
+      "voucherIds": [
+        "1QlqcEwCiqkXRFH_FliQREGgq2FMY4JgI"
+      ]
+    },
+    {
+      "_legacyRowNum": 5,
+      "date": "2026-02-23",
+      "month": "2026-02",
+      "type": "支出",
+      "category": "医疗/药费",
+      "amount": 5.25,
+      "summary": "德济医院挂号",
+      "source": "3.批量补录数据",
+      "status": "智能关联",
+      "voucherIds": [
+        "1kuXRGf1CImB4bCT4Hq_RgGMuPPw953MI"
+      ]
+    },
+    {
+      "_legacyRowNum": 6,
+      "date": "2026-02-23",
+      "month": "2026-02",
+      "type": "支出",
+      "category": "医疗/药费",
+      "amount": 2000,
+      "summary": "德济医院押金",
+      "source": "3.批量补录数据",
+      "status": "智能关联",
+      "voucherIds": [
+        "1Aw0tIWQGUL6_A5O92G0eGGyD-avTOCv8"
+      ]
+    },
+    {
+      "_legacyRowNum": 7,
+      "date": "2026-02-23",
+      "month": "2026-02",
+      "type": "支出",
+      "category": "护工/护理费",
+      "amount": 3825,
+      "summary": "天佑医院护工费",
+      "source": "3.批量补录数据",
+      "status": "智能关联",
+      "voucherIds": [
+        "11DmQRRfpEsiDd4cjK-BmRmk4CLyHVW44"
+      ]
+    },
+    {
+      "_legacyRowNum": 8,
+      "date": "2026-02-23",
+      "month": "2026-02",
+      "type": "支出",
+      "category": "医疗/药费",
+      "amount": 3814.3,
+      "summary": "天佑医院出院自付费用",
+      "source": "3.批量补录数据",
+      "status": "智能关联",
+      "voucherIds": [
+        "1o1bM9gYjtY-4eWlw0Id_EYZSXY5X8oFR"
+      ]
+    },
+    {
+      "_legacyRowNum": 9,
+      "date": "2026-02-13",
+      "month": "2026-02",
+      "type": "支出",
+      "category": "生活用品/买菜",
+      "amount": 48.8,
+      "summary": "安慕希酸奶",
+      "source": "3.批量补录数据",
+      "status": "智能关联",
+      "voucherIds": [
+        "19kOEUgN6mOvwAkyrZD2sNFJBgGVpD_Hb"
+      ]
+    },
+    {
+      "_legacyRowNum": 10,
+      "date": "2026-02-13",
+      "month": "2026-02",
+      "type": "支出",
+      "category": "生活用品/买菜",
+      "amount": 128.34,
+      "summary": "护理垫",
+      "source": "3.批量补录数据",
+      "status": "智能关联",
+      "voucherIds": [
+        "12oF-ffK7oiCXtuvRTd3m5NkY3GJisAdk"
+      ]
+    },
+    {
+      "_legacyRowNum": 11,
+      "date": "2026-02-03",
+      "month": "2026-02",
+      "type": "支出",
+      "category": "医疗/药费",
+      "amount": 11968.95,
+      "summary": "德济医院结账",
+      "source": "3.批量补录数据",
+      "status": "智能关联",
+      "voucherIds": [
+        "1yi1x0Iz87WdP2OAnpcsMNnw6PMYznQLq"
+      ]
+    },
+    {
+      "_legacyRowNum": 12,
+      "date": "2026-02-03",
+      "month": "2026-02",
+      "type": "支出",
+      "category": "医疗/药费",
+      "amount": 1500,
+      "summary": "高压氧舱（阿姨）",
+      "source": "3.批量补录数据",
+      "status": "智能关联",
+      "voucherIds": [
+        "13WF1ZDLaKpKwJ0ad8LRuCEBwTJ9JtRcM"
+      ]
+    },
+    {
+      "_legacyRowNum": 13,
+      "date": "2026-02-03",
+      "month": "2026-02",
+      "type": "支出",
+      "category": "医疗/药费",
+      "amount": 38.2,
+      "summary": "救护车",
+      "source": "3.批量补录数据",
+      "status": "智能关联",
+      "voucherIds": [
+        "1W5wQn53kgK3-XA7t_mvv1RUzURNTNA-a"
+      ]
+    },
+    {
+      "_legacyRowNum": 14,
+      "date": "2026-02-03",
+      "month": "2026-02",
+      "type": "支出",
+      "category": "医疗/药费",
+      "amount": 5.8,
+      "summary": "天佑医院挂号",
+      "source": "3.批量补录数据",
+      "status": "智能关联",
+      "voucherIds": [
+        "1apOhc2kNBVtfXBX6BP97SaQPzs6ZHeDa",
+        "1JSCaW7HSrvCa7W10HDOI7_AFDlgP0KzN"
+      ]
+    },
+    {
+      "_legacyRowNum": 15,
+      "date": "2026-02-03",
+      "month": "2026-02",
+      "type": "支出",
+      "category": "医疗/药费",
+      "amount": 3000,
+      "summary": "天佑医院押金",
+      "source": "3.批量补录数据",
+      "status": "智能关联",
+      "voucherIds": [
+        "1bxhzVVrL2I51BiPV79HGY0-JHTdTpuOv"
+      ]
+    },
+    {
+      "_legacyRowNum": 16,
+      "date": "2026-02-03",
+      "month": "2026-02",
+      "type": "支出",
+      "category": "生活服务",
+      "amount": 15,
+      "summary": "午饭",
+      "source": "3.批量补录数据",
+      "status": "智能关联",
+      "voucherIds": [
+        "1-sn6NQK7mMG3SmvCt1fxXY7SCBstl8n9"
+      ]
+    },
+    {
+      "_legacyRowNum": 17,
+      "date": "2026-01-29",
+      "month": "2026-01",
+      "type": "支出",
+      "category": "生活用品/买菜",
+      "amount": 610,
+      "summary": "天佑茶叶 (礼品)",
+      "source": "3.批量补录数据",
+      "status": "智能关联",
+      "voucherIds": [
+        "1JIRtimKi7Sg7dJPAlxjnwmYyEu-7nK4z"
+      ]
+    },
+    {
+      "_legacyRowNum": 18,
+      "date": "2026-01-29",
+      "month": "2026-01",
+      "type": "支出",
+      "category": "亲属红包",
+      "amount": 300,
+      "summary": "护工阿姨红包",
+      "source": "3.批量补录数据",
+      "status": "智能关联",
+      "voucherIds": [
+        "1MOBoMIBMIa4ucpzBcHfOyPoG2H3bPDc8"
+      ]
+    },
+    {
+      "_legacyRowNum": 19,
+      "date": "2026-01-25",
+      "month": "2026-01",
+      "type": "支出",
+      "category": "生活用品/买菜",
+      "amount": 49.9,
+      "summary": "酸奶",
+      "source": "3.批量补录数据",
+      "status": "智能关联",
+      "voucherIds": [
+        "1aL5uE6QmZkJts-xuo14-rDXHJ4sb2G9A",
+        "17N4jKv__l3bf6qUs82GBujKeBTqGmGcb"
+      ]
+    },
+    {
+      "_legacyRowNum": 20,
+      "date": "2026-01-22",
+      "month": "2026-01",
+      "type": "支出",
+      "category": "医疗/药费",
+      "amount": 59.5,
+      "summary": "达克宁粉",
+      "source": "3.批量补录数据",
+      "status": "人工关联",
+      "voucherIds": [
+        "1fcD9SDQbl3luOSKr4LoXy1-pVDuVlpZU",
+        "1qe0ZT2A2s5RQrFxhBSJ4nkQmsgJa1wCa"
+      ]
+    },
+    {
+      "_legacyRowNum": 21,
+      "date": "2026-01-16",
+      "month": "2026-01",
+      "type": "支出",
+      "category": "生活用品/买菜",
+      "amount": 49.9,
+      "summary": "安慕希酸奶",
+      "source": "3.批量补录数据",
+      "status": "人工关联",
+      "voucherIds": [
+        "12T_LIyLj1HKWXydzzor9LGagyQTWDVpE"
+      ]
+    },
+    {
+      "_legacyRowNum": 22,
+      "date": "2026-01-16",
+      "month": "2026-01",
+      "type": "支出",
+      "category": "生活用品/买菜",
+      "amount": 12.5,
+      "summary": "自行车锁",
+      "source": "3.批量补录数据",
+      "status": "智能关联",
+      "voucherIds": [
+        "1qbqOjyzwmObEHN2XjAkgJCKTm5xcoIMB"
+      ]
+    },
+    {
+      "_legacyRowNum": 23,
+      "date": "2026-01-05",
+      "month": "2026-01",
+      "type": "支出",
+      "category": "医疗/药费",
+      "amount": 40.1,
+      "summary": "达克宁粉",
+      "source": "3.批量补录数据",
+      "status": "智能关联",
+      "voucherIds": [
+        "1N6BrwORShoB-8XnZUCwpKdH2x8QRpG84"
+      ]
+    },
+    {
+      "_legacyRowNum": 24,
+      "date": "2026-01-05",
+      "month": "2026-01",
+      "type": "支出",
+      "category": "生活用品/买菜",
+      "amount": 47.1,
+      "summary": "肉松",
+      "source": "3.批量补录数据",
+      "status": "智能关联",
+      "voucherIds": [
+        "1e_O5j7mSBoC9qxY_nsMfgyzPMLcH0DlC"
+      ]
+    },
+    {
+      "_legacyRowNum": 25,
+      "date": "2026-01-04",
+      "month": "2026-01",
+      "type": "支出",
+      "category": "医疗/药费",
+      "amount": 318.8,
+      "summary": "轮椅",
+      "source": "3.批量补录数据",
+      "status": "智能关联",
+      "voucherIds": [
+        "1y1hMV_tKQFKuGQ2uK-ng3bJEWiqujKDv"
+      ]
+    },
+    {
+      "_legacyRowNum": 26,
+      "date": "2026-01-03",
+      "month": "2026-01",
+      "type": "支出",
+      "category": "护工/护理费",
+      "amount": 7260,
+      "summary": "1 月份护工费",
+      "source": "3.批量补录数据",
+      "status": "人工关联",
+      "voucherIds": [
+        "16_Fsuj55rK7w-gxynRgpBSbxqxnh9M_T"
+      ]
+    },
+    {
+      "_legacyRowNum": 27,
+      "date": "2025-12-31",
+      "month": "2025-12",
+      "type": "支出",
+      "category": "护工/护理费",
+      "amount": 2200,
+      "summary": "护工 10 天工资",
+      "source": "3.批量补录数据",
+      "status": "智能关联",
+      "voucherIds": [
+        "1gu6mc7QpqkXTZx0CEcH_oMQMqWBOHcR5"
+      ]
+    },
+    {
+      "_legacyRowNum": 28,
+      "date": "2025-12-30",
+      "month": "2025-12",
+      "type": "支出",
+      "category": "生活用品/买菜",
+      "amount": 89.9,
+      "summary": "肉松 + 酸奶",
+      "source": "3.批量补录数据",
+      "status": "人工关联",
+      "voucherIds": [
+        "1gZ8MpjaJ1HX0VfV6rmWJURwEFv8rpoHt"
+      ]
+    },
+    {
+      "_legacyRowNum": 29,
+      "date": "2025-12-30",
+      "month": "2025-12",
+      "type": "支出",
+      "category": "医疗/药费",
+      "amount": 171,
+      "summary": "尿不湿",
+      "source": "3.批量补录数据",
+      "status": "智能关联",
+      "voucherIds": [
+        "1UgoM1nAHEpNmPEKBItNC6Yf_uEoENno4"
+      ]
+    },
+    {
+      "_legacyRowNum": 30,
+      "date": "2025-12-30",
+      "month": "2025-12",
+      "type": "支出",
+      "category": "医疗/药费",
+      "amount": 15.3,
+      "summary": "垫圈",
+      "source": "3.批量补录数据",
+      "status": "智能关联",
+      "voucherIds": [
+        "1csn384JHqJrgXgFWsejCo7VqI98agk2z"
+      ]
+    },
+    {
+      "_legacyRowNum": 31,
+      "date": "2025-12-30",
+      "month": "2025-12",
+      "type": "支出",
+      "category": "护工/护理费",
+      "amount": 300,
+      "summary": "护工阿姨买饭",
+      "source": "3.批量补录数据",
+      "status": "人工关联",
+      "voucherIds": [
+        "1byXnAXIJqNuEAqzV6dA4AEuet-bUESNs"
+      ]
+    },
+    {
+      "_legacyRowNum": 32,
+      "date": "2025-12-28",
+      "month": "2025-12",
+      "type": "支出",
+      "category": "生活服务",
+      "amount": 30,
+      "summary": "理发",
+      "source": "3.批量补录数据",
+      "status": "智能关联",
+      "voucherIds": [
+        "1Ni0FOvz847o2JDd1UrPLGaqpUKJ2ffdt"
+      ]
+    },
+    {
+      "_legacyRowNum": 33,
+      "date": "2025-12-25",
+      "month": "2025-12",
+      "type": "支出",
+      "category": "生活用品/买菜",
+      "amount": 39.9,
+      "summary": "垫圈",
+      "source": "3.批量补录数据",
+      "status": "智能关联",
+      "voucherIds": [
+        "1yErFlX1bB2S5b1MC9URL73iECnLemISi"
+      ]
+    },
+    {
+      "_legacyRowNum": 34,
+      "date": "2025-12-25",
+      "month": "2025-12",
+      "type": "支出",
+      "category": "生活用品/买菜",
+      "amount": 29.55,
+      "summary": "纸巾",
+      "source": "3.批量补录数据",
+      "status": "智能关联",
+      "voucherIds": [
+        "1krGg4MxwLnbE5Kz1N-zfT4ax4GwVUn0q"
+      ]
+    },
+    {
+      "_legacyRowNum": 35,
+      "date": "2025-12-25",
+      "month": "2025-12",
+      "type": "支出",
+      "category": "生活用品/买菜",
+      "amount": 39.9,
+      "summary": "湿纸巾",
+      "source": "3.批量补录数据",
+      "status": "智能关联",
+      "voucherIds": [
+        "1SzkFR7i-8uY6Fh7TsblHXmKTc1V30zs1"
+      ]
+    },
+    {
+      "_legacyRowNum": 36,
+      "date": "2025-12-24",
+      "month": "2025-12",
+      "type": "支出",
+      "category": "生活用品/买菜",
+      "amount": 40,
+      "summary": "早餐",
+      "source": "3.批量补录数据",
+      "status": "智能关联",
+      "voucherIds": [
+        "1N94DDrBOXEyPby99JC_B4b_E66ZW_KIA"
+      ]
+    },
+    {
+      "_legacyRowNum": 37,
+      "date": "2025-12-24",
+      "month": "2025-12",
+      "type": "支出",
+      "category": "医疗/药费",
+      "amount": 72.62,
+      "summary": "隔尿垫",
+      "source": "3.批量补录数据",
+      "status": "智能关联",
+      "voucherIds": [
+        "1JFLqjQvyvq87uO1bKhs4F5HwtjskFFlL"
+      ]
+    },
+    {
+      "_legacyRowNum": 38,
+      "date": "2025-12-23",
+      "month": "2025-12",
+      "type": "支出",
+      "category": "医疗/药费",
+      "amount": 60,
+      "summary": "手套 ×2",
+      "source": "3.批量补录数据",
+      "status": "智能关联",
+      "voucherIds": [
+        "1oHbe9A7yMea7BZS0zEOupD3s0aSmuW9E"
+      ]
+    },
+    {
+      "_legacyRowNum": 39,
+      "date": "2025-12-23",
+      "month": "2025-12",
+      "type": "支出",
+      "category": "医疗/药费",
+      "amount": 59.5,
+      "summary": "达克宁粉",
+      "source": "3.批量补录数据",
+      "status": "人工关联",
+      "voucherIds": [
+        "1bbhElHl-mYjv3YiYQw3m6MNcHi8LVVg8",
+        "1TUy9yKS0vvJwLzKOBkddMMO-MdlpNSrc"
+      ]
+    },
+    {
+      "_legacyRowNum": 40,
+      "date": "2025-12-22",
+      "month": "2025-12",
+      "type": "支出",
+      "category": "医疗/药费",
+      "amount": 30,
+      "summary": "手套",
+      "source": "3.批量补录数据",
+      "status": "人工关联",
+      "voucherIds": [
+        "1KTkADr5tGvL7qY1W29y2dlJ8a5feFVJh",
+        "16ekHDi_v-eLezQ9jv-fRLP4JW6lc-BW1"
+      ]
+    },
+    {
+      "_legacyRowNum": 41,
+      "date": "2025-12-22",
+      "month": "2025-12",
+      "type": "支出",
+      "category": "护工/护理费",
+      "amount": 1800,
+      "summary": "ICU 护工 2 天",
+      "source": "3.批量补录数据",
+      "status": "智能关联",
+      "voucherIds": [
+        "1BhFhyi67BiwnMqEaeNBgcJB8rP3qPq8c"
+      ]
+    },
+    {
+      "_legacyRowNum": 42,
+      "date": "2025-12-22",
+      "month": "2025-12",
+      "type": "支出",
+      "category": "医疗/药费",
+      "amount": 10,
+      "summary": "针筒",
+      "source": "3.批量补录数据",
+      "status": "智能关联",
+      "voucherIds": [
+        "1aPppfwwaf3iXpvkSfl6vqRA-xIPFX0zm"
+      ]
+    },
+    {
+      "_legacyRowNum": 43,
+      "date": "2025-12-15",
+      "month": "2025-12",
+      "type": "支出",
+      "category": "医疗/药费",
+      "amount": 30,
+      "summary": "隔离衣",
+      "source": "3.批量补录数据",
+      "status": "智能关联",
+      "voucherIds": [
+        "17ffapAUMf5RC4InhFl9rNJvYmCsjFbdd"
+      ]
+    },
+    {
+      "_legacyRowNum": 44,
+      "date": "2025-12-15",
+      "month": "2025-12",
+      "type": "支出",
+      "category": "医疗/药费",
+      "amount": 90,
+      "summary": "隔尿垫 ×2",
+      "source": "3.批量补录数据",
+      "status": "人工关联",
+      "voucherIds": [
+        "1BHXjuA1wxP_40JeJ9a6PPH9-_PlklNY2",
+        "1mYDhU2V9E9womDbJQrDySe983b-9e5vt"
+      ]
+    },
+    {
+      "_legacyRowNum": 45,
+      "date": "2025-12-14",
+      "month": "2025-12",
+      "type": "支出",
+      "category": "生活用品/买菜",
+      "amount": 37.9,
+      "summary": "爱慕思酸奶",
+      "source": "3.批量补录数据",
+      "status": "人工关联",
+      "voucherIds": [
+        "1nnMVm9YH8ynYTXnzNYI8MVRt0feN5M1J"
+      ]
+    },
+    {
+      "_legacyRowNum": 46,
+      "date": "2025-12-12",
+      "month": "2025-12",
+      "type": "支出",
+      "category": "医疗/药费",
+      "amount": 30,
+      "summary": "隔离衣",
+      "source": "3.批量补录数据",
+      "status": "智能关联",
+      "voucherIds": [
+        "1NtMtzhBSXVhDx-MBSkJSWvQE5DEB8Xof"
+      ]
+    },
+    {
+      "_legacyRowNum": 47,
+      "date": "2025-12-12",
+      "month": "2025-12",
+      "type": "支出",
+      "category": "医疗/药费",
+      "amount": 30,
+      "summary": "手套",
+      "source": "3.批量补录数据",
+      "status": "智能关联",
+      "voucherIds": [
+        "1le6zYUDseS0RLV5-V5YKghEHC9M-96F8"
+      ]
+    },
+    {
+      "_legacyRowNum": 48,
+      "date": "2025-12-12",
+      "month": "2025-12",
+      "type": "支出",
+      "category": "医疗/药费",
+      "amount": 45,
+      "summary": "隔尿垫",
+      "source": "3.批量补录数据",
+      "status": "多图合并",
+      "voucherIds": [
+        "1iqb1fOSWZ_htUWzm70R8_16wRYcuWMk3"
+      ]
+    },
+    {
+      "_legacyRowNum": 49,
+      "date": "2025-12-10",
+      "month": "2025-12",
+      "type": "支出",
+      "category": "医疗/药费",
+      "amount": 30,
+      "summary": "救护车挂号",
+      "source": "3.批量补录数据",
+      "status": "智能关联",
+      "voucherIds": [
+        "1OfWBLlbRWDKpNZMpBQiUM7dB6ek2IgLT"
+      ]
+    },
+    {
+      "_legacyRowNum": 50,
+      "date": "2025-12-10",
+      "month": "2025-12",
+      "type": "支出",
+      "category": "医疗/药费",
+      "amount": 17.48,
+      "summary": "检查费",
+      "source": "3.批量补录数据",
+      "status": "人工关联",
+      "voucherIds": [
+        "1ENGpefX6e9GHKI4GuQLfnvBxv4T7UkDn"
+      ]
+    },
+    {
+      "_legacyRowNum": 51,
+      "date": "2025-12-10",
+      "month": "2025-12",
+      "type": "支出",
+      "category": "医疗/药费",
+      "amount": 22.16,
+      "summary": "药费",
+      "source": "3.批量补录数据",
+      "status": "智能关联",
+      "voucherIds": [
+        "1A3r_NrFU2ehQNlzSbK9eAyO13a1P3Qbt"
+      ]
+    },
+    {
+      "_legacyRowNum": 52,
+      "date": "2025-12-10",
+      "month": "2025-12",
+      "type": "支出",
+      "category": "医疗/药费",
+      "amount": 5000,
+      "summary": "住院押金",
+      "source": "3.批量补录数据",
+      "status": "智能关联",
+      "voucherIds": [
+        "1kVdK-KqldWQZ4HS7a3cWT5Uaat6CshI0"
+      ]
+    },
+    {
+      "_legacyRowNum": 53,
+      "date": "2025-12-10",
+      "month": "2025-12",
+      "type": "支出",
+      "category": "医疗/药费",
+      "amount": 30,
+      "summary": "隔离衣",
+      "source": "3.批量补录数据",
+      "status": "人工关联",
+      "voucherIds": [
+        "1wyw07zejg6q6WcfTkf8qm-4DbXJImfYz"
+      ]
+    },
+    {
+      "_legacyRowNum": 54,
+      "date": "2025-12-10",
+      "month": "2025-12",
+      "type": "支出",
+      "category": "医疗/药费",
+      "amount": 45,
+      "summary": "隔尿垫",
+      "source": "3.批量补录数据",
+      "status": "智能关联",
+      "voucherIds": [
+        "1bi7azhBRacIgTMwkPPrubRuhCDgxBVIo"
+      ]
+    },
+    {
+      "_legacyRowNum": 55,
+      "date": "2025-12-10",
+      "month": "2025-12",
+      "type": "支出",
+      "category": "医疗/药费",
+      "amount": 45,
+      "summary": "三角垫",
+      "source": "3.批量补录数据",
+      "status": "智能关联",
+      "voucherIds": [
+        "1gf2vnRUjKKI9ReyPSOJqTjX0ox0ByXYM"
+      ]
+    },
+    {
+      "_legacyRowNum": 56,
+      "date": "2025-12-10",
+      "month": "2025-12",
+      "type": "支出",
+      "category": "医疗/药费",
+      "amount": 30,
+      "summary": "隔离衣",
+      "source": "3.批量补录数据",
+      "status": "智能关联",
+      "voucherIds": [
+        "15VcXzpjYf7z-XLLHX-6xjr7_WBK8MWpU"
+      ]
+    },
+    {
+      "_legacyRowNum": 57,
+      "date": "2025-12-10",
+      "month": "2025-12",
+      "type": "支出",
+      "category": "医疗",
+      "amount": 3,
+      "summary": "挂号费用",
+      "source": "可视对账录入",
+      "status": "智能关联",
+      "voucherIds": [
+        "1pmdY7vs8-l_6qzeJ1owCB6jj5b7grx2b"
+      ]
+    },
+    {
+      "_legacyRowNum": 58,
+      "date": "2026-01-11",
+      "month": "2026-01",
+      "type": "收入",
+      "category": "其他",
+      "amount": 8510.66,
+      "summary": "上海银行收款",
+      "source": "快捷文本录入",
+      "status": "人工关联",
+      "voucherIds": [
+        "1G05FbBcEwnvDjh9QiiAzdVdH61PWVKLg"
+      ]
+    },
+    {
+      "_legacyRowNum": 59,
+      "date": "2026-01-11",
+      "month": "2026-01",
+      "type": "收入",
+      "category": "其他",
+      "amount": 8700,
+      "summary": "建设银行收款",
+      "source": "快捷文本录入",
+      "status": "人工关联",
+      "voucherIds": [
+        "1p8XszfUZ5LUGhgvseU5UduPMu5fr83tb"
+      ]
+    },
+    {
+      "_legacyRowNum": 60,
+      "date": "2026-02-11",
+      "month": "2026-02",
+      "type": "收入",
+      "category": "其他",
+      "amount": 4600,
+      "summary": "上海银行收款",
+      "source": "快捷文本录入",
+      "status": "人工关联",
+      "voucherIds": [
+        "1G05FbBcEwnvDjh9QiiAzdVdH61PWVKLg"
+      ]
+    },
+    {
+      "_legacyRowNum": 61,
+      "date": "2026-03-11",
+      "month": "2026-03",
+      "type": "收入",
+      "category": "其他",
+      "amount": 10200,
+      "summary": "上海银行收款",
+      "source": "快捷文本录入",
+      "status": "人工关联",
+      "voucherIds": [
+        "1G05FbBcEwnvDjh9QiiAzdVdH61PWVKLg"
+      ]
+    },
+    {
+      "_legacyRowNum": 62,
+      "date": "2026-03-11",
+      "month": "2026-03",
+      "type": "收入",
+      "category": "其他",
+      "amount": 9375,
+      "summary": "建设银行收款",
+      "source": "快捷文本录入",
+      "status": "人工关联",
+      "voucherIds": [
+        "1p8XszfUZ5LUGhgvseU5UduPMu5fr83tb"
+      ]
+    }
+  ],
+  "vouchers": [
+    {
+      "legacyDriveId": "11pZAd5tLG0HpxPza16M8yM0Row2sFdPo"
+    },
+    {
+      "legacyDriveId": "1QlqcEwCiqkXRFH_FliQREGgq2FMY4JgI"
+    },
+    {
+      "legacyDriveId": "1kuXRGf1CImB4bCT4Hq_RgGMuPPw953MI"
+    },
+    {
+      "legacyDriveId": "1Aw0tIWQGUL6_A5O92G0eGGyD-avTOCv8"
+    },
+    {
+      "legacyDriveId": "11DmQRRfpEsiDd4cjK-BmRmk4CLyHVW44"
+    },
+    {
+      "legacyDriveId": "1o1bM9gYjtY-4eWlw0Id_EYZSXY5X8oFR"
+    },
+    {
+      "legacyDriveId": "19kOEUgN6mOvwAkyrZD2sNFJBgGVpD_Hb"
+    },
+    {
+      "legacyDriveId": "12oF-ffK7oiCXtuvRTd3m5NkY3GJisAdk"
+    },
+    {
+      "legacyDriveId": "1yi1x0Iz87WdP2OAnpcsMNnw6PMYznQLq"
+    },
+    {
+      "legacyDriveId": "13WF1ZDLaKpKwJ0ad8LRuCEBwTJ9JtRcM"
+    },
+    {
+      "legacyDriveId": "1W5wQn53kgK3-XA7t_mvv1RUzURNTNA-a"
+    },
+    {
+      "legacyDriveId": "1apOhc2kNBVtfXBX6BP97SaQPzs6ZHeDa"
+    },
+    {
+      "legacyDriveId": "1JSCaW7HSrvCa7W10HDOI7_AFDlgP0KzN"
+    },
+    {
+      "legacyDriveId": "1bxhzVVrL2I51BiPV79HGY0-JHTdTpuOv"
+    },
+    {
+      "legacyDriveId": "1-sn6NQK7mMG3SmvCt1fxXY7SCBstl8n9"
+    },
+    {
+      "legacyDriveId": "1JIRtimKi7Sg7dJPAlxjnwmYyEu-7nK4z"
+    },
+    {
+      "legacyDriveId": "1MOBoMIBMIa4ucpzBcHfOyPoG2H3bPDc8"
+    },
+    {
+      "legacyDriveId": "1aL5uE6QmZkJts-xuo14-rDXHJ4sb2G9A"
+    },
+    {
+      "legacyDriveId": "17N4jKv__l3bf6qUs82GBujKeBTqGmGcb"
+    },
+    {
+      "legacyDriveId": "1fcD9SDQbl3luOSKr4LoXy1-pVDuVlpZU"
+    },
+    {
+      "legacyDriveId": "1qe0ZT2A2s5RQrFxhBSJ4nkQmsgJa1wCa"
+    },
+    {
+      "legacyDriveId": "12T_LIyLj1HKWXydzzor9LGagyQTWDVpE"
+    },
+    {
+      "legacyDriveId": "1qbqOjyzwmObEHN2XjAkgJCKTm5xcoIMB"
+    },
+    {
+      "legacyDriveId": "1N6BrwORShoB-8XnZUCwpKdH2x8QRpG84"
+    },
+    {
+      "legacyDriveId": "1e_O5j7mSBoC9qxY_nsMfgyzPMLcH0DlC"
+    },
+    {
+      "legacyDriveId": "1y1hMV_tKQFKuGQ2uK-ng3bJEWiqujKDv"
+    },
+    {
+      "legacyDriveId": "16_Fsuj55rK7w-gxynRgpBSbxqxnh9M_T"
+    },
+    {
+      "legacyDriveId": "1gu6mc7QpqkXTZx0CEcH_oMQMqWBOHcR5"
+    },
+    {
+      "legacyDriveId": "1gZ8MpjaJ1HX0VfV6rmWJURwEFv8rpoHt"
+    },
+    {
+      "legacyDriveId": "1UgoM1nAHEpNmPEKBItNC6Yf_uEoENno4"
+    },
+    {
+      "legacyDriveId": "1csn384JHqJrgXgFWsejCo7VqI98agk2z"
+    },
+    {
+      "legacyDriveId": "1byXnAXIJqNuEAqzV6dA4AEuet-bUESNs"
+    },
+    {
+      "legacyDriveId": "1Ni0FOvz847o2JDd1UrPLGaqpUKJ2ffdt"
+    },
+    {
+      "legacyDriveId": "1yErFlX1bB2S5b1MC9URL73iECnLemISi"
+    },
+    {
+      "legacyDriveId": "1krGg4MxwLnbE5Kz1N-zfT4ax4GwVUn0q"
+    },
+    {
+      "legacyDriveId": "1SzkFR7i-8uY6Fh7TsblHXmKTc1V30zs1"
+    },
+    {
+      "legacyDriveId": "1N94DDrBOXEyPby99JC_B4b_E66ZW_KIA"
+    },
+    {
+      "legacyDriveId": "1JFLqjQvyvq87uO1bKhs4F5HwtjskFFlL"
+    },
+    {
+      "legacyDriveId": "1oHbe9A7yMea7BZS0zEOupD3s0aSmuW9E"
+    },
+    {
+      "legacyDriveId": "1bbhElHl-mYjv3YiYQw3m6MNcHi8LVVg8"
+    },
+    {
+      "legacyDriveId": "1TUy9yKS0vvJwLzKOBkddMMO-MdlpNSrc"
+    },
+    {
+      "legacyDriveId": "1KTkADr5tGvL7qY1W29y2dlJ8a5feFVJh"
+    },
+    {
+      "legacyDriveId": "16ekHDi_v-eLezQ9jv-fRLP4JW6lc-BW1"
+    },
+    {
+      "legacyDriveId": "1BhFhyi67BiwnMqEaeNBgcJB8rP3qPq8c"
+    },
+    {
+      "legacyDriveId": "1aPppfwwaf3iXpvkSfl6vqRA-xIPFX0zm"
+    },
+    {
+      "legacyDriveId": "17ffapAUMf5RC4InhFl9rNJvYmCsjFbdd"
+    },
+    {
+      "legacyDriveId": "1BHXjuA1wxP_40JeJ9a6PPH9-_PlklNY2"
+    },
+    {
+      "legacyDriveId": "1mYDhU2V9E9womDbJQrDySe983b-9e5vt"
+    },
+    {
+      "legacyDriveId": "1nnMVm9YH8ynYTXnzNYI8MVRt0feN5M1J"
+    },
+    {
+      "legacyDriveId": "1NtMtzhBSXVhDx-MBSkJSWvQE5DEB8Xof"
+    },
+    {
+      "legacyDriveId": "1le6zYUDseS0RLV5-V5YKghEHC9M-96F8"
+    },
+    {
+      "legacyDriveId": "1iqb1fOSWZ_htUWzm70R8_16wRYcuWMk3"
+    },
+    {
+      "legacyDriveId": "1OfWBLlbRWDKpNZMpBQiUM7dB6ek2IgLT"
+    },
+    {
+      "legacyDriveId": "1ENGpefX6e9GHKI4GuQLfnvBxv4T7UkDn"
+    },
+    {
+      "legacyDriveId": "1A3r_NrFU2ehQNlzSbK9eAyO13a1P3Qbt"
+    },
+    {
+      "legacyDriveId": "1kVdK-KqldWQZ4HS7a3cWT5Uaat6CshI0"
+    },
+    {
+      "legacyDriveId": "1wyw07zejg6q6WcfTkf8qm-4DbXJImfYz"
+    },
+    {
+      "legacyDriveId": "1bi7azhBRacIgTMwkPPrubRuhCDgxBVIo"
+    },
+    {
+      "legacyDriveId": "1gf2vnRUjKKI9ReyPSOJqTjX0ox0ByXYM"
+    },
+    {
+      "legacyDriveId": "15VcXzpjYf7z-XLLHX-6xjr7_WBK8MWpU"
+    },
+    {
+      "legacyDriveId": "1pmdY7vs8-l_6qzeJ1owCB6jj5b7grx2b"
+    },
+    {
+      "legacyDriveId": "1G05FbBcEwnvDjh9QiiAzdVdH61PWVKLg"
+    },
+    {
+      "legacyDriveId": "1p8XszfUZ5LUGhgvseU5UduPMu5fr83tb"
+    }
+  ]
+}

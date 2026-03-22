@@ -1,0 +1,13 @@
+{
+  "name": "duka-v2rmm",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "migrate:import": "node migrate/import.js"
+  },
+  "dependencies": {
+    "firebase-admin": "^13.5.0",
+    "googleapis": "^150.0.1"
+  }
+}

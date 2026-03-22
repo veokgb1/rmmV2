@@ -1,0 +1,6 @@
+name = "duka-v2-worker"
+main = "worker/index.js"
+compatibility_date = "2026-03-22"
+
+[observability]
+enabled = true

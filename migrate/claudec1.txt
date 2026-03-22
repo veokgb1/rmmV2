@@ -1,0 +1,28 @@
+现在主链路已经通了，继续只收尾两个前端 warning，不动数据库，不动 Firebase 业务逻辑。
+
+当前剩余两个 warning：
+
+1. Tailwind CDN production warning
+- 这是警告，不阻塞功能
+- 本轮先不要改成完整构建链
+- 只确认它不会影响当前页面使用即可
+
+2. Manifest icon warning
+- 现在浏览器提示 /icons/icon-192.png 无效
+- 请你检查这个文件是否真实存在、是否是有效 PNG
+- 如果当前文件损坏或不是标准 PNG，请直接生成一个最简单可用的 192x192 PNG 占位图标，并覆盖到：
+  E:/rmm-2sys/rmm-workspace/2.V2rmm/icons/icon-192.png
+
+另外再检查：
+- manifest.json 中 192 图标路径是否正确
+- 如有 512 图标，也一起检查是否有效
+
+要求：
+1. 只处理图标 warning
+2. 不改页面业务逻辑
+3. 不改登录逻辑
+4. 不改 Firebase 配置
+5. 返回：
+   - 改了哪些文件
+   - icon-192.png 是否已修复
+   - 刷新后控制台应剩下什么 warning

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#7F77DD" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1a1a2e"  media="(prefers-color-scheme: dark)">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="RMM 账本">
+  <meta name="description" content="RMM 账本 V2 · DUKA Firebase Edition">
+
+  <title>RMM 账本 V2</title>
+
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="/manifest.json">
+
+  <!-- Favicon & Apple 图标 -->
+  <link rel="icon" href="/icons/icon-192.png" type="image/png">
+  <link rel="apple-touch-icon" href="/icons/icon-192.png">
+
+  <!-- Tailwind CSS（CDN，生产环境应换为编译后的 CSS） -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'media',
+      theme: {
+        extend: {
+          colors: {
+            purple: {
+              400: '#AFA9EC',
+              500: '#7F77DD',
+              600: '#534AB7',
+              700: '#3C3489',
+              900: '#26215C',
+              950: '#1a1530',
+            }
+          },
+          borderRadius: {
+            'xl':  '12px',
+            '2xl': '16px',
+            '3xl': '20px',
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    /* ── 全局基础样式 ─────────────────────── */
+    * { -webkit-tap-highlight-color: transparent; }
+
+    html, body {
+      height: 100%;
+      overflow: hidden;
+      overscroll-behavior: none;
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC",
+                   "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    }
+
+    /* 安全区适配（刘海屏） */
+    #app-wrapper {
+      height: 100dvh;
+      padding-top:    env(safe-area-inset-top);
+      padding-bottom: env(safe-area-inset-bottom);
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    /* 抽屉/面板动画初始状态 */
+    #drawer-panel,
+    #shadow-monitor-panel {
+      transform: translateY(100%);
+    }
+
+    /* 滚动区域隐藏滚动条（保留功能） */
+    .overflow-y-auto::-webkit-scrollbar { display: none; }
+    .overflow-y-auto { -ms-overflow-style: none; scrollbar-width: none; }
+
+    /* 骨架屏动画 */
+    @keyframes shimmer {
+      0%   { opacity: 0.5; }
+      50%  { opacity: 1;   }
+      100% { opacity: 0.5; }
+    }
+    .animate-pulse { animation: shimmer 1.5s ease-in-out infinite; }
+
+    /* 触控反馈 */
+    .tx-card:active,
+    .tab-btn:active,
+    .nav-btn:active,
+    .drawer-key:active { transform: scale(0.97); transition: transform 0.1s; }
+
+    /* 输入框统一样式（深色模式） */
+    @media (prefers-color-scheme: dark) {
+      input, textarea, select {
+        color-scheme: dark;
+      }
+    }
+
+    /* 过渡动画 */
+    .pane { transition: opacity 0.15s; }
+    .pane.hidden { opacity: 0; pointer-events: none; }
+  </style>
+
+  <!--
+    ── 环境变量注入 ──────────────────────────────────────────
+    部署到 Cloudflare Pages 时，在构建脚本中生成此文件，
+    将 _worker.js 中取到的环境变量注入到 window.__ENV__。
+    本地开发时在项目根目录创建 env.js 并手动填写。
+    注意：此文件只包含非敏感的前端配置（Firebase 客户端 config），
+          Gemini API Key 等敏感密钥存放在 Worker Secrets，永远不出现在此处。
+  -->
+  <script>
+    window.__ENV__ = Object.assign({
+      // Frontend -> Cloudflare Worker 请求地址
+      WORKER_URL: "",
+
+      // Firebase Web App 配置
+      FIREBASE_API_KEY: "AIzaSyD_wRDP1_a0q96LRqdPBiKX1PPUYalfuNA",
+      FIREBASE_AUTH_DOMAIN: "rmmduizhang.firebaseapp.com",
+      FIREBASE_PROJECT_ID: "rmmduizhang",
+      FIREBASE_STORAGE_BUCKET: "rmmduizhang.firebasestorage.app",
+      FIREBASE_MESSAGING_SENDER_ID: "340776450027",
+      FIREBASE_APP_ID: "1:340776450027:web:f8d22e72c38efa1584cbae",
+
+      // 旧系统 GAS 接口地址（过渡期双写才需要，不用时保持空字符串）
+      GAS_V1_URL: "",
+
+      // 是否开启双写日志: "true" 或 "false"
+      SHADOW_WRITE_ENABLED: "true",
+
+      // 是否显示双盲核对横幅: "true" 或 "false"
+      DUAL_BLIND_BANNER: "true",
+    }, window.__ENV__ || {});
+  </script>
+</head>
+
+<body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100">
+
+  <!--
+    ── App 容器 ────────────────────────────────────────────
+    全屏容器，Flex 列布局：
+      [双盲横幅（可选）]
+      [顶部统计栏]
+      [Tab 导航]
+      [内容区 flex-1]
+      [底部导航]
+    浮层元素（TAB、抽屉、Modal）绝对定位于此容器内
+  -->
+  <div id="app-wrapper" class="flex flex-col overflow-hidden relative">
+    <!-- app-root 由 ui-layout.js 动态填入 -->
+    <!-- 登录前：showLoginScreen() 渲染登录页 -->
+    <!-- 登录后：showAppShell() 渲染主界面骨架 -->
+    <div id="app-root" class="flex flex-col flex-1 overflow-hidden relative">
+      <!-- 初始加载态 -->
+      <div id="initial-loader"
+           class="flex-1 flex flex-col items-center justify-center gap-3 text-gray-300 dark:text-gray-700">
+        <svg class="w-10 h-10 animate-spin text-purple-400" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/>
+        </svg>
+        <p class="text-sm">连接中...</p>
+      </div>
+    </div>
+  </div>
+
+  <!--
+    ── 模块入口（type="module" 保证 ES6 import 正常工作）──
+    feature-logic.js 是唯一入口，通过 import 链加载其他模块：
+      feature-logic → api-bridge → core-config
+      feature-logic → ui-layout  → core-config
+      feature-logic → match-engine（无依赖）
+    initFirebase 由 api-bridge 首次调用时懒加载 Firebase SDK。
+  -->
+  <script type="module">
+    import { initFirebase } from "./js/core-config.js";
+    import { initApp }      from "./js/feature-logic.js";
+
+    // 注册 Service Worker
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("/sw.js", { scope: "/" })
+        .then((reg) => {
+          console.log("[App] SW 注册成功，scope:", reg.scope);
+        })
+        .catch((err) => {
+          console.warn("[App] SW 注册失败（不影响功能）:", err);
+        });
+
+      // 监听 SW 消息（后台同步）
+      navigator.serviceWorker.addEventListener("message", (event) => {
+        if (event.data?.type === "SYNC_PENDING_TRANSACTIONS") {
+          console.log("[App] 收到 SW 同步指令");
+        }
+      });
+    }
+
+    // 初始化 Firebase 并启动应用
+    try {
+      await initFirebase();
+      await initApp();
+    } catch (err) {
+      console.error("[App] 初始化失败：", err);
+      document.getElementById("initial-loader").innerHTML = `
+        <p class="text-sm text-red-400">初始化失败：${err.message}</p>
+        <p class="text-xs text-gray-400 mt-1">请检查 window.__ENV__ 配置</p>
+        <button onclick="location.reload()"
+          class="mt-3 px-4 py-2 text-xs rounded-xl bg-purple-600 text-white">
+          重试
+        </button>`;
+    }
+  </script>
+
+</body>
+</html>

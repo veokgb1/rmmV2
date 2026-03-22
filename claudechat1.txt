@@ -1,0 +1,50 @@
+现在不要让我手动填 Firebase 配置，你直接帮我写入项目代码。
+
+当前项目路径：
+E:/rmm-2sys/rmm-workspace/2.V2rmm
+
+当前问题已经确认：
+window.__ENV__ 仍然全部是空字符串，所以 Firebase 初始化失败。
+
+我已经有一份正确的 Firebase 配置，请你直接写入：
+
+apiKey: "AIzaSyD_wRDP1_a0q96LRqdPBiKX1PPUYalfuNA"
+authDomain: "rmmduizhang.firebaseapp.com"
+projectId: "rmmduizhang"
+storageBucket: "rmmduizhang.firebasestorage.app"
+messagingSenderId: "340776450027"
+appId: "1:340776450027:web:f8d22e72c38efa1584cbae"
+
+请你做下面这件事：
+
+1. 找到 index.html 中的 window.__ENV__ 配置块
+2. 把以下字段全部填入真实值（不能再为空）：
+   - FIREBASE_API_KEY
+   - FIREBASE_AUTH_DOMAIN
+   - FIREBASE_PROJECT_ID
+   - FIREBASE_STORAGE_BUCKET
+   - FIREBASE_MESSAGING_SENDER_ID
+   - FIREBASE_APP_ID
+3. 确保 window.__ENV__ 最终没有任何空字符串
+4. 项目统一使用 window.__ENV__，不要让我手动再填
+
+另外继续完成这几个前端修复：
+1. 清理 index.html 和 js/ui-layout.js 里的乱码文本或乱码注释
+2. 登录页改成居中卡片布局
+3. 缩小 Logo
+4. 输入框和按钮统一宽度
+5. 修复 favicon 404
+6. 修复 manifest icon 问题（如果路径或资源无效就修正）
+
+强约束：
+- 不改数据库
+- 不改迁移脚本
+- 不改 Firebase 业务逻辑
+- 只改前端展示层和 window.__ENV__ 配置块
+- 不要只分析，要直接改文件
+
+完成后请只返回：
+1. 修改了哪些文件
+2. 每个文件改了什么
+3. window.__ENV__ 最终完整内容
+4. 刷新后我应该看到什么

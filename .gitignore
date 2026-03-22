@@ -1,0 +1,22 @@
+node_modules/
+
+# Secrets
+.env
+.env.*
+env.local
+env.*.local
+migrate/serviceAccount.json
+serviceAccount.json
+
+# Build and reports
+dist/
+coverage/
+migrate/migration-report.json
+
+# OS / editor temp files
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.tmp
+*.temp
+*.log
