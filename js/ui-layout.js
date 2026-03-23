@@ -497,7 +497,7 @@ export function openDrawer(onKeyAction, options = {}) {
   const keyByAction   = new Map(visibleKeys.map((key) => [key.action, key]));
 
   const primary = [keyByAction.get("openQuickEntry")].filter(Boolean);
-  const secondary = ["openBatchText", "openBatchMatching", "openShadowMonitor"]
+  const secondary = ["openBatchText", "openBatchMatching", "openRowCorrelation", "openVoucherCorrelation", "openShadowMonitor", "openConflictCourt"]
     .map((action) => keyByAction.get(action))
     .filter(Boolean);
   const secondarySet = new Set(secondary.map((k) => k.action));

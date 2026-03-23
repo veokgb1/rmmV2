@@ -546,6 +546,18 @@ function normalizeDateStr(date) {
   return new Date().toISOString().slice(0, 10);
 }
 
+function encodePendingVoucherCursor(docSnap) {
+  if (!docSnap) return null;
+  const data = docSnap.data?.() || {};
+  const id = String(docSnap.id || "").trim();
+  if (!id) return null;
+  const rawUpdatedAt = data.updatedAt;
+  if (rawUpdatedAt == null) return null;
+  const updatedAtMs = Date.parse(String(rawUpdatedAt));
+  if (!Number.isFinite(updatedAtMs)) return null;
+  return { id, updatedAtMs };
+}
+
 class ApiError extends Error {
   constructor(message, status) {
     super(message);

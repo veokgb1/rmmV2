@@ -34,6 +34,8 @@ export const APP_CONFIG = Object.freeze({
 
   // 影子写超时（ms，必须短于主链路，失败不影响用户）
   SHADOW_TIMEOUT_MS: 5_000,
+  DEDUPE_PROMOTION_STRATEGY:
+    ENV.DEDUPE_PROMOTION_STRATEGY === "manual_resolve" ? "manual_resolve" : "strict",
 
   // Firebase 客户端配置（非敏感，可写入代码）
   FIREBASE: {
@@ -107,9 +109,9 @@ export const KEY_MAP = Object.freeze([
   },
   {
     id:     9,
-    label:  "断案法庭",
+    label:  "难度处理",
     icon:   "M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3",
-    desc:   "冲突凭证审理",
+    desc:   "聚合匹配、去重、临时难项",
     action: "openConflictCourt",
   },
 ]);

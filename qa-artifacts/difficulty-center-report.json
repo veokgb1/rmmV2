@@ -1,0 +1,1374 @@
+{
+  "startedAt": "2026-03-23T13:40:00.727Z",
+  "baseUrl": "http://127.0.0.1:56145/",
+  "scenarios": [
+    {
+      "strategy": "strict",
+      "startedAt": "2026-03-23T13:40:00.960Z",
+      "steps": [
+        {
+          "name": "settings strategy switch",
+          "startedAt": "2026-03-23T13:40:01.368Z",
+          "data": {
+            "selected": "strict",
+            "currentHint": "��ǰ��strict (continue promote keeps dedupe difficulty item)"
+          },
+          "status": "passed",
+          "finishedAt": "2026-03-23T13:40:01.842Z"
+        },
+        {
+          "name": "global center entry convergence",
+          "startedAt": "2026-03-23T13:40:01.842Z",
+          "data": {
+            "rowMeta": {
+              "active": "records",
+              "title": "全局排查中心"
+            },
+            "voucherMeta": {
+              "active": "pending"
+            }
+          },
+          "status": "passed",
+          "finishedAt": "2026-03-23T13:40:02.514Z"
+        },
+        {
+          "name": "global center load more expansion",
+          "startedAt": "2026-03-23T13:40:02.514Z",
+          "data": {
+            "rowBeforeCount": 3,
+            "rowAfterFormalCount": 4,
+            "rowAfterTempCount": 5,
+            "pendingBeforeCount": 1,
+            "pendingAfterCount": 2,
+            "modeNoteCursor": "mode cursor\n      正常分页：nextCursor\n      · 仍可继续加载\n      · 当前会话：按当前模式加载",
+            "rowScopeBefore": {
+              "text": "Scope: formal loaded 2/2 (base 2, max 10), temp loaded 1/1 (base 1, max 10), pending_link loaded 1/1 (page 1, mode cursor)",
+              "formal": {
+                "loaded": 2,
+                "requested": 2,
+                "base": 2,
+                "max": 10
+              },
+              "temp": {
+                "loaded": 1,
+                "requested": 1,
+                "base": 1,
+                "max": 10
+              },
+              "pendingLink": {
+                "loaded": 1,
+                "requested": 1,
+                "pageSize": 1,
+                "mode": "cursor"
+              }
+            },
+            "rowScopeAfterTemp": {
+              "text": "Scope: formal loaded 3/4 (base 2, max 10), temp loaded 2/2 (base 1, max 10), pending_link loaded 1/1 (page 1, mode cursor)",
+              "formal": {
+                "loaded": 3,
+                "requested": 4,
+                "base": 2,
+                "max": 10
+              },
+              "temp": {
+                "loaded": 2,
+                "requested": 2,
+                "base": 1,
+                "max": 10
+              },
+              "pendingLink": {
+                "loaded": 1,
+                "requested": 1,
+                "pageSize": 1,
+                "mode": "cursor"
+              }
+            },
+            "pendingScopeBefore": {
+              "text": "Scope: formal loaded 2/2 (base 2, max 10), temp loaded 1/1 (base 1, max 10), pending_link loaded 1/1 (page 1, mode cursor)",
+              "formal": {
+                "loaded": 2,
+                "requested": 2,
+                "base": 2,
+                "max": 10
+              },
+              "temp": {
+                "loaded": 1,
+                "requested": 1,
+                "base": 1,
+                "max": 10
+              },
+              "pendingLink": {
+                "loaded": 1,
+                "requested": 1,
+                "pageSize": 1,
+                "mode": "cursor"
+              }
+            },
+            "pendingScopeAfter": {
+              "text": "Scope: formal loaded 2/2 (base 2, max 10), temp loaded 1/1 (base 1, max 10), pending_link loaded 2/2 (page 1, mode cursor)",
+              "formal": {
+                "loaded": 2,
+                "requested": 2,
+                "base": 2,
+                "max": 10
+              },
+              "temp": {
+                "loaded": 1,
+                "requested": 1,
+                "base": 1,
+                "max": 10
+              },
+              "pendingLink": {
+                "loaded": 2,
+                "requested": 2,
+                "pageSize": 1,
+                "mode": "cursor"
+              }
+            }
+          },
+          "status": "passed",
+          "finishedAt": "2026-03-23T13:40:03.748Z"
+        },
+        {
+          "name": "global center pending cursor load-more states",
+          "startedAt": "2026-03-23T13:40:03.748Z",
+          "data": {
+            "firstLoadingSeen": true,
+            "finalMeta": {
+              "disabled": true,
+              "loadState": "no_more",
+              "loadMode": "cursor",
+              "text": "pending 已无更多 (cursor 正常) loaded 4 / req 4 / max 10 no more"
+            },
+            "finalScope": {
+              "text": "Scope: formal loaded 2/2 (base 2, max 10), temp loaded 1/1 (base 1, max 10), pending_link loaded 4/4 (page 1, mode cursor)",
+              "formal": {
+                "loaded": 2,
+                "requested": 2,
+                "base": 2,
+                "max": 10
+              },
+              "temp": {
+                "loaded": 1,
+                "requested": 1,
+                "base": 1,
+                "max": 10
+              },
+              "pendingLink": {
+                "loaded": 4,
+                "requested": 4,
+                "pageSize": 1,
+                "mode": "cursor"
+              }
+            },
+            "finalCount": 4,
+            "afterNoMoreScope": {
+              "text": "Scope: formal loaded 2/2 (base 2, max 10), temp loaded 1/1 (base 1, max 10), pending_link loaded 4/4 (page 1, mode cursor)",
+              "formal": {
+                "loaded": 2,
+                "requested": 2,
+                "base": 2,
+                "max": 10
+              },
+              "temp": {
+                "loaded": 1,
+                "requested": 1,
+                "base": 1,
+                "max": 10
+              },
+              "pendingLink": {
+                "loaded": 4,
+                "requested": 4,
+                "pageSize": 1,
+                "mode": "cursor"
+              }
+            },
+            "afterNoMoreCount": 4,
+            "stateTrace": [
+              {
+                "phase": "loading-probe",
+                "disabled": true,
+                "loadState": "loading",
+                "stateText": "loading..."
+              },
+              {
+                "phase": "before-0",
+                "disabled": false,
+                "loadState": "ready",
+                "loadMode": "cursor",
+                "text": "pending +1 (cursor 正常) loaded 2 / req 2 / max 10 next -> 3"
+              },
+              {
+                "phase": "before-1",
+                "disabled": false,
+                "loadState": "ready",
+                "loadMode": "cursor",
+                "text": "pending +1 (cursor 正常) loaded 3 / req 3 / max 10 next -> 4"
+              },
+              {
+                "phase": "before-2",
+                "disabled": true,
+                "loadState": "no_more",
+                "loadMode": "cursor",
+                "text": "pending 已无更多 (cursor 正常) loaded 4 / req 4 / max 10 no more"
+              }
+            ]
+          },
+          "status": "passed",
+          "finishedAt": "2026-03-23T13:40:05.108Z"
+        },
+        {
+          "name": "global center pending same-updatedAt cursor stability",
+          "startedAt": "2026-03-23T13:40:05.108Z",
+          "data": {
+            "orderA": [
+              "pending:voucher_relink",
+              "pending:voucher_done",
+              "pending:voucher_page3",
+              "pending:voucher_page4"
+            ],
+            "orderB": [
+              "pending:voucher_relink",
+              "pending:voucher_done",
+              "pending:voucher_page3",
+              "pending:voucher_page4"
+            ]
+          },
+          "status": "passed",
+          "finishedAt": "2026-03-23T13:40:07.176Z"
+        },
+        {
+          "name": "global center session memory restore",
+          "startedAt": "2026-03-23T13:40:07.176Z",
+          "data": {
+            "rowBeforeMeta": {
+              "activeView": "temp",
+              "search": "奶茶"
+            },
+            "rowAfterMeta": {
+              "activeView": "temp",
+              "search": "奶茶"
+            },
+            "rowScopeBefore": {
+              "text": "Scope: formal loaded 3/4 (base 2, max 10), temp loaded 1/1 (base 1, max 10), pending_link loaded 1/1 (page 1, mode cursor)",
+              "formal": {
+                "loaded": 3,
+                "requested": 4,
+                "base": 2,
+                "max": 10
+              },
+              "temp": {
+                "loaded": 1,
+                "requested": 1,
+                "base": 1,
+                "max": 10
+              },
+              "pendingLink": {
+                "loaded": 1,
+                "requested": 1,
+                "pageSize": 1,
+                "mode": "cursor"
+              }
+            },
+            "rowScopeAfter": {
+              "text": "Scope: formal loaded 3/4 (base 2, max 10), temp loaded 1/1 (base 1, max 10), pending_link loaded 1/1 (page 1, mode cursor) · session-restored",
+              "formal": {
+                "loaded": 3,
+                "requested": 4,
+                "base": 2,
+                "max": 10
+              },
+              "temp": {
+                "loaded": 1,
+                "requested": 1,
+                "base": 1,
+                "max": 10
+              },
+              "pendingLink": {
+                "loaded": 1,
+                "requested": 1,
+                "pageSize": 1,
+                "mode": "cursor"
+              }
+            },
+            "pendingBefore": {
+              "text": "Scope: formal loaded 2/2 (base 2, max 10), temp loaded 1/1 (base 1, max 10), pending_link loaded 3/3 (page 1, mode cursor)",
+              "formal": {
+                "loaded": 2,
+                "requested": 2,
+                "base": 2,
+                "max": 10
+              },
+              "temp": {
+                "loaded": 1,
+                "requested": 1,
+                "base": 1,
+                "max": 10
+              },
+              "pendingLink": {
+                "loaded": 3,
+                "requested": 3,
+                "pageSize": 1,
+                "mode": "cursor"
+              }
+            },
+            "pendingAfter": {
+              "text": "Scope: formal loaded 2/2 (base 2, max 10), temp loaded 1/1 (base 1, max 10), pending_link loaded 3/3 (page 1, mode cursor) · session-restored",
+              "formal": {
+                "loaded": 2,
+                "requested": 2,
+                "base": 2,
+                "max": 10
+              },
+              "temp": {
+                "loaded": 1,
+                "requested": 1,
+                "base": 1,
+                "max": 10
+              },
+              "pendingLink": {
+                "loaded": 3,
+                "requested": 3,
+                "pageSize": 1,
+                "mode": "cursor"
+              }
+            },
+            "pendingBeforeCount": 3,
+            "pendingAfterCount": 3,
+            "pendingBeforeBtn": {
+              "disabled": false,
+              "loadState": "ready",
+              "loadMode": "cursor",
+              "text": "pending +1 (cursor 正常) loaded 3 / req 3 / max 10 next -> 4"
+            },
+            "pendingAfterBtn": {
+              "disabled": false,
+              "loadState": "ready",
+              "loadMode": "cursor",
+              "text": "pending +1 (cursor 正常) loaded 3 / req 3 / max 10 next -> 4"
+            },
+            "pendingContinueCount": 4,
+            "pendingNoMoreBtn": {
+              "disabled": true,
+              "loadState": "no_more",
+              "loadMode": "cursor",
+              "text": "pending 已无更多 (cursor 正常) loaded 4 / req 4 / max 10 no more"
+            },
+            "pendingNoMoreScope": {
+              "text": "Scope: formal loaded 2/2 (base 2, max 10), temp loaded 1/1 (base 1, max 10), pending_link loaded 4/4 (page 1, mode cursor) · session-restored",
+              "formal": {
+                "loaded": 2,
+                "requested": 2,
+                "base": 2,
+                "max": 10
+              },
+              "temp": {
+                "loaded": 1,
+                "requested": 1,
+                "base": 1,
+                "max": 10
+              },
+              "pendingLink": {
+                "loaded": 4,
+                "requested": 4,
+                "pageSize": 1,
+                "mode": "cursor"
+              }
+            },
+            "pendingAfterNoMoreBtn": {
+              "disabled": true,
+              "loadState": "no_more",
+              "loadMode": "cursor",
+              "text": "pending 已无更多 (cursor 正常) loaded 4 / req 4 / max 10 no more"
+            },
+            "pendingAfterNoMoreRestore": {
+              "text": "Scope: formal loaded 2/2 (base 2, max 10), temp loaded 1/1 (base 1, max 10), pending_link loaded 4/4 (page 1, mode cursor) · session-restored",
+              "formal": {
+                "loaded": 2,
+                "requested": 2,
+                "base": 2,
+                "max": 10
+              },
+              "temp": {
+                "loaded": 1,
+                "requested": 1,
+                "base": 1,
+                "max": 10
+              },
+              "pendingLink": {
+                "loaded": 4,
+                "requested": 4,
+                "pageSize": 1,
+                "mode": "cursor"
+              }
+            },
+            "pendingAfterNoMoreCount": 4,
+            "pendingBeforeScroll": 0,
+            "pendingAfterScroll": 0
+          },
+          "status": "passed",
+          "finishedAt": "2026-03-23T13:40:09.633Z"
+        },
+        {
+          "name": "global center pending fallback-step mode",
+          "startedAt": "2026-03-23T13:40:09.634Z",
+          "data": {
+            "beforeScope": {
+              "text": "Scope: formal loaded 2/2 (base 2, max 10), temp loaded 1/1 (base 1, max 10), pending_link loaded 1/1 (page 1, mode fallback-step)",
+              "formal": {
+                "loaded": 2,
+                "requested": 2,
+                "base": 2,
+                "max": 10
+              },
+              "temp": {
+                "loaded": 1,
+                "requested": 1,
+                "base": 1,
+                "max": 10
+              },
+              "pendingLink": {
+                "loaded": 1,
+                "requested": 1,
+                "pageSize": 1,
+                "mode": "fallback-step"
+              }
+            },
+            "afterScope": {
+              "text": "Scope: formal loaded 2/2 (base 2, max 10), temp loaded 1/1 (base 1, max 10), pending_link loaded 4/5 (page 1, mode fallback-step)",
+              "formal": {
+                "loaded": 2,
+                "requested": 2,
+                "base": 2,
+                "max": 10
+              },
+              "temp": {
+                "loaded": 1,
+                "requested": 1,
+                "base": 1,
+                "max": 10
+              },
+              "pendingLink": {
+                "loaded": 4,
+                "requested": 5,
+                "pageSize": 1,
+                "mode": "fallback-step"
+              }
+            },
+            "afterExtraScope": {
+              "text": "Scope: formal loaded 2/2 (base 2, max 10), temp loaded 1/1 (base 1, max 10), pending_link loaded 4/5 (page 1, mode fallback-step)",
+              "formal": {
+                "loaded": 2,
+                "requested": 2,
+                "base": 2,
+                "max": 10
+              },
+              "temp": {
+                "loaded": 1,
+                "requested": 1,
+                "base": 1,
+                "max": 10
+              },
+              "pendingLink": {
+                "loaded": 4,
+                "requested": 5,
+                "pageSize": 1,
+                "mode": "fallback-step"
+              }
+            },
+            "beforeModeNote": "mode fallback-step\n      已降级：cursor 查询失败（fallback-step）\n      · 仍可继续加载\n      · 当前会话：按当前模式加载",
+            "afterMeta": {
+              "disabled": true,
+              "loadState": "no_more",
+              "loadMode": "fallback-step",
+              "text": "pending 已无更多 (fallback-step 降级) loaded 4 / req 5 / max 10 no more"
+            },
+            "afterCount": 4,
+            "afterExtraCount": 4,
+            "stateTrace": [
+              {
+                "phase": "before-0",
+                "disabled": false,
+                "loadState": "ready",
+                "loadMode": "fallback-step",
+                "text": "pending +1 (fallback-step 降级) loaded 1 / req 1 / max 10 next -> 2"
+              },
+              {
+                "phase": "before-1",
+                "disabled": false,
+                "loadState": "ready",
+                "loadMode": "fallback-step",
+                "text": "pending +1 (fallback-step 降级) loaded 2 / req 2 / max 10 next -> 3"
+              },
+              {
+                "phase": "before-2",
+                "disabled": false,
+                "loadState": "ready",
+                "loadMode": "fallback-step",
+                "text": "pending +1 (fallback-step 降级) loaded 3 / req 3 / max 10 next -> 4"
+              },
+              {
+                "phase": "before-3",
+                "disabled": false,
+                "loadState": "ready",
+                "loadMode": "fallback-step",
+                "text": "pending +1 (fallback-step 降级) loaded 4 / req 4 / max 10 next -> 5"
+              },
+              {
+                "phase": "before-4",
+                "disabled": true,
+                "loadState": "no_more",
+                "loadMode": "fallback-step",
+                "text": "pending 已无更多 (fallback-step 降级) loaded 4 / req 5 / max 10 no more"
+              }
+            ]
+          },
+          "status": "passed",
+          "finishedAt": "2026-03-23T13:40:11.117Z"
+        },
+        {
+          "name": "global center search and quick actions",
+          "startedAt": "2026-03-23T13:40:11.117Z",
+          "data": {
+            "rowHitCount": 1,
+            "noHitCount": 0,
+            "noHitText": "没有命中结果 未命中“no-hit-keyword-xyz”，可清空关键词或切换视角继续排查",
+            "noHitModeNote": "mode cursor\n      正常分页：nextCursor\n      · 仍可继续加载\n      · 当前会话：按当前模式加载",
+            "pendingHitCount": 1,
+            "doneActionCount": 1,
+            "scopeHint": "Scope: formal loaded 2/2 (base 2, max 10), temp loaded 1/1 (base 1, max 10), pending_link loaded 1/1 (page 1, mode cursor)",
+            "rowHitReasonText": "摘要/关键词命中",
+            "rowHitTagCount": 1,
+            "voucherHitTagCount": 1
+          },
+          "status": "passed",
+          "finishedAt": "2026-03-23T13:40:12.759Z"
+        },
+        {
+          "name": "global center pending cursor after relink and continue load",
+          "startedAt": "2026-03-23T13:40:12.759Z",
+          "data": {
+            "loaded3Count": 3,
+            "afterRelinkCount": 2,
+            "afterContinueCount": 3,
+            "uniqueCount": 3,
+            "scopeInfo": {
+              "text": "Scope: formal loaded 2/2 (base 2, max 10), temp loaded 1/1 (base 1, max 10), pending_link loaded 3/3 (page 1, mode cursor)",
+              "formal": {
+                "loaded": 2,
+                "requested": 2,
+                "base": 2,
+                "max": 10
+              },
+              "temp": {
+                "loaded": 1,
+                "requested": 1,
+                "base": 1,
+                "max": 10
+              },
+              "pendingLink": {
+                "loaded": 3,
+                "requested": 3,
+                "pageSize": 1,
+                "mode": "cursor"
+              }
+            },
+            "entryIds": [
+              "pending:voucher_relink",
+              "pending:voucher_done",
+              "pending:voucher_page4"
+            ]
+          },
+          "status": "passed",
+          "finishedAt": "2026-03-23T13:40:14.713Z"
+        },
+        {
+          "name": "difficulty-center filters",
+          "startedAt": "2026-03-23T13:40:14.714Z",
+          "data": {
+            "allCount": 4,
+            "matchingCount": 2,
+            "dedupeCount": 1,
+            "tempCount": 1
+          },
+          "status": "passed",
+          "finishedAt": "2026-03-23T13:40:14.915Z"
+        },
+        {
+          "name": "search and filter linkage",
+          "startedAt": "2026-03-23T13:40:14.915Z",
+          "data": {
+            "searchAllCount": 1,
+            "searchMatchingCount": 1,
+            "matchingAfterClear": 2
+          },
+          "status": "passed",
+          "finishedAt": "2026-03-23T13:40:15.370Z"
+        },
+        {
+          "name": "mark done hides matching item",
+          "startedAt": "2026-03-23T13:40:15.370Z",
+          "data": {
+            "matchingCount": 1
+          },
+          "status": "passed",
+          "finishedAt": "2026-03-23T13:40:15.738Z"
+        },
+        {
+          "name": "pending_link relink chain",
+          "startedAt": "2026-03-23T13:40:15.738Z",
+          "data": {
+            "matchingCount": 0
+          },
+          "status": "passed",
+          "finishedAt": "2026-03-23T13:40:16.188Z"
+        },
+        {
+          "name": "dedupe actions and detail jump",
+          "startedAt": "2026-03-23T13:40:16.188Z",
+          "data": {
+            "dedupeCount": 1,
+            "dedupeAfterDone": 0
+          },
+          "status": "passed",
+          "finishedAt": "2026-03-23T13:40:16.930Z"
+        },
+        {
+          "name": "temp to formal duplicate warning flow",
+          "startedAt": "2026-03-23T13:40:16.930Z",
+          "data": {
+            "tempBefore": 1,
+            "tempAfter": 0
+          },
+          "status": "passed",
+          "finishedAt": "2026-03-23T13:40:17.417Z"
+        },
+        {
+          "name": "strategy final behavior",
+          "startedAt": "2026-03-23T13:40:17.417Z",
+          "data": {
+            "allCount": 1,
+            "dedupeCount": 1
+          },
+          "status": "passed",
+          "finishedAt": "2026-03-23T13:40:17.578Z"
+        }
+      ],
+      "requestfailed": [],
+      "pageerrors": [],
+      "console": [
+        {
+          "type": "log",
+          "text": "[App] SW 注册成功，scope: /"
+        }
+      ],
+      "screenshots": [
+        "E:\\rmm-2sys\\rmm-workspace\\2.V2rmm\\qa-artifacts\\difficulty-center\\strict-00-shell.png",
+        "E:\\rmm-2sys\\rmm-workspace\\2.V2rmm\\qa-artifacts\\difficulty-center\\strict-01-settings-strategy.png",
+        "E:\\rmm-2sys\\rmm-workspace\\2.V2rmm\\qa-artifacts\\difficulty-center\\strict-02-global-entry-converge.png",
+        "E:\\rmm-2sys\\rmm-workspace\\2.V2rmm\\qa-artifacts\\difficulty-center\\strict-03-global-load-more.png",
+        "E:\\rmm-2sys\\rmm-workspace\\2.V2rmm\\qa-artifacts\\difficulty-center\\strict-03c-global-pending-cursor-states.png",
+        "E:\\rmm-2sys\\rmm-workspace\\2.V2rmm\\qa-artifacts\\difficulty-center\\strict-03a-global-pending-same-updatedAt.png",
+        "E:\\rmm-2sys\\rmm-workspace\\2.V2rmm\\qa-artifacts\\difficulty-center\\strict-03c-global-session-memory.png",
+        "E:\\rmm-2sys\\rmm-workspace\\2.V2rmm\\qa-artifacts\\difficulty-center\\strict-03b-global-pending-fallback-step.png",
+        "E:\\rmm-2sys\\rmm-workspace\\2.V2rmm\\qa-artifacts\\difficulty-center\\strict-03-global-search-actions.png",
+        "E:\\rmm-2sys\\rmm-workspace\\2.V2rmm\\qa-artifacts\\difficulty-center\\strict-04-global-pending-cursor-relink.png",
+        "E:\\rmm-2sys\\rmm-workspace\\2.V2rmm\\qa-artifacts\\difficulty-center\\strict-04-filters.png",
+        "E:\\rmm-2sys\\rmm-workspace\\2.V2rmm\\qa-artifacts\\difficulty-center\\strict-05-search-linkage.png",
+        "E:\\rmm-2sys\\rmm-workspace\\2.V2rmm\\qa-artifacts\\difficulty-center\\strict-06-matching-done.png",
+        "E:\\rmm-2sys\\rmm-workspace\\2.V2rmm\\qa-artifacts\\difficulty-center\\strict-07-relink-picker.png",
+        "E:\\rmm-2sys\\rmm-workspace\\2.V2rmm\\qa-artifacts\\difficulty-center\\strict-08-dedupe-open-left.png",
+        "E:\\rmm-2sys\\rmm-workspace\\2.V2rmm\\qa-artifacts\\difficulty-center\\strict-09-dedupe-done.png",
+        "E:\\rmm-2sys\\rmm-workspace\\2.V2rmm\\qa-artifacts\\difficulty-center\\strict-10-promote-warning.png",
+        "E:\\rmm-2sys\\rmm-workspace\\2.V2rmm\\qa-artifacts\\difficulty-center\\strict-11-final-state.png"
+      ],
+      "failures": [],
+      "finishedAt": "2026-03-23T13:40:17.578Z"
+    },
+    {
+      "strategy": "manual_resolve",
+      "startedAt": "2026-03-23T13:40:17.591Z",
+      "steps": [
+        {
+          "name": "settings strategy switch",
+          "startedAt": "2026-03-23T13:40:17.945Z",
+          "data": {
+            "selected": "manual_resolve",
+            "currentHint": "��ǰ��manual_resolve (continue promote = manually resolved)"
+          },
+          "status": "passed",
+          "finishedAt": "2026-03-23T13:40:18.391Z"
+        },
+        {
+          "name": "global center entry convergence",
+          "startedAt": "2026-03-23T13:40:18.391Z",
+          "data": {
+            "rowMeta": {
+              "active": "records",
+              "title": "全局排查中心"
+            },
+            "voucherMeta": {
+              "active": "pending"
+            }
+          },
+          "status": "passed",
+          "finishedAt": "2026-03-23T13:40:19.058Z"
+        },
+        {
+          "name": "global center load more expansion",
+          "startedAt": "2026-03-23T13:40:19.059Z",
+          "data": {
+            "rowBeforeCount": 3,
+            "rowAfterFormalCount": 4,
+            "rowAfterTempCount": 5,
+            "pendingBeforeCount": 1,
+            "pendingAfterCount": 2,
+            "modeNoteCursor": "mode cursor\n      正常分页：nextCursor\n      · 仍可继续加载\n      · 当前会话：按当前模式加载",
+            "rowScopeBefore": {
+              "text": "Scope: formal loaded 2/2 (base 2, max 10), temp loaded 1/1 (base 1, max 10), pending_link loaded 1/1 (page 1, mode cursor)",
+              "formal": {
+                "loaded": 2,
+                "requested": 2,
+                "base": 2,
+                "max": 10
+              },
+              "temp": {
+                "loaded": 1,
+                "requested": 1,
+                "base": 1,
+                "max": 10
+              },
+              "pendingLink": {
+                "loaded": 1,
+                "requested": 1,
+                "pageSize": 1,
+                "mode": "cursor"
+              }
+            },
+            "rowScopeAfterTemp": {
+              "text": "Scope: formal loaded 3/4 (base 2, max 10), temp loaded 2/2 (base 1, max 10), pending_link loaded 1/1 (page 1, mode cursor)",
+              "formal": {
+                "loaded": 3,
+                "requested": 4,
+                "base": 2,
+                "max": 10
+              },
+              "temp": {
+                "loaded": 2,
+                "requested": 2,
+                "base": 1,
+                "max": 10
+              },
+              "pendingLink": {
+                "loaded": 1,
+                "requested": 1,
+                "pageSize": 1,
+                "mode": "cursor"
+              }
+            },
+            "pendingScopeBefore": {
+              "text": "Scope: formal loaded 2/2 (base 2, max 10), temp loaded 1/1 (base 1, max 10), pending_link loaded 1/1 (page 1, mode cursor)",
+              "formal": {
+                "loaded": 2,
+                "requested": 2,
+                "base": 2,
+                "max": 10
+              },
+              "temp": {
+                "loaded": 1,
+                "requested": 1,
+                "base": 1,
+                "max": 10
+              },
+              "pendingLink": {
+                "loaded": 1,
+                "requested": 1,
+                "pageSize": 1,
+                "mode": "cursor"
+              }
+            },
+            "pendingScopeAfter": {
+              "text": "Scope: formal loaded 2/2 (base 2, max 10), temp loaded 1/1 (base 1, max 10), pending_link loaded 2/2 (page 1, mode cursor)",
+              "formal": {
+                "loaded": 2,
+                "requested": 2,
+                "base": 2,
+                "max": 10
+              },
+              "temp": {
+                "loaded": 1,
+                "requested": 1,
+                "base": 1,
+                "max": 10
+              },
+              "pendingLink": {
+                "loaded": 2,
+                "requested": 2,
+                "pageSize": 1,
+                "mode": "cursor"
+              }
+            }
+          },
+          "status": "passed",
+          "finishedAt": "2026-03-23T13:40:20.322Z"
+        },
+        {
+          "name": "global center pending cursor load-more states",
+          "startedAt": "2026-03-23T13:40:20.322Z",
+          "data": {
+            "firstLoadingSeen": true,
+            "finalMeta": {
+              "disabled": true,
+              "loadState": "no_more",
+              "loadMode": "cursor",
+              "text": "pending 已无更多 (cursor 正常) loaded 4 / req 4 / max 10 no more"
+            },
+            "finalScope": {
+              "text": "Scope: formal loaded 2/2 (base 2, max 10), temp loaded 1/1 (base 1, max 10), pending_link loaded 4/4 (page 1, mode cursor)",
+              "formal": {
+                "loaded": 2,
+                "requested": 2,
+                "base": 2,
+                "max": 10
+              },
+              "temp": {
+                "loaded": 1,
+                "requested": 1,
+                "base": 1,
+                "max": 10
+              },
+              "pendingLink": {
+                "loaded": 4,
+                "requested": 4,
+                "pageSize": 1,
+                "mode": "cursor"
+              }
+            },
+            "finalCount": 4,
+            "afterNoMoreScope": {
+              "text": "Scope: formal loaded 2/2 (base 2, max 10), temp loaded 1/1 (base 1, max 10), pending_link loaded 4/4 (page 1, mode cursor)",
+              "formal": {
+                "loaded": 2,
+                "requested": 2,
+                "base": 2,
+                "max": 10
+              },
+              "temp": {
+                "loaded": 1,
+                "requested": 1,
+                "base": 1,
+                "max": 10
+              },
+              "pendingLink": {
+                "loaded": 4,
+                "requested": 4,
+                "pageSize": 1,
+                "mode": "cursor"
+              }
+            },
+            "afterNoMoreCount": 4,
+            "stateTrace": [
+              {
+                "phase": "loading-probe",
+                "disabled": true,
+                "loadState": "loading",
+                "stateText": "loading..."
+              },
+              {
+                "phase": "before-0",
+                "disabled": false,
+                "loadState": "ready",
+                "loadMode": "cursor",
+                "text": "pending +1 (cursor 正常) loaded 2 / req 2 / max 10 next -> 3"
+              },
+              {
+                "phase": "before-1",
+                "disabled": false,
+                "loadState": "ready",
+                "loadMode": "cursor",
+                "text": "pending +1 (cursor 正常) loaded 3 / req 3 / max 10 next -> 4"
+              },
+              {
+                "phase": "before-2",
+                "disabled": true,
+                "loadState": "no_more",
+                "loadMode": "cursor",
+                "text": "pending 已无更多 (cursor 正常) loaded 4 / req 4 / max 10 no more"
+              }
+            ]
+          },
+          "status": "passed",
+          "finishedAt": "2026-03-23T13:40:21.769Z"
+        },
+        {
+          "name": "global center pending same-updatedAt cursor stability",
+          "startedAt": "2026-03-23T13:40:21.769Z",
+          "data": {
+            "orderA": [
+              "pending:voucher_relink",
+              "pending:voucher_done",
+              "pending:voucher_page3",
+              "pending:voucher_page4"
+            ],
+            "orderB": [
+              "pending:voucher_relink",
+              "pending:voucher_done",
+              "pending:voucher_page3",
+              "pending:voucher_page4"
+            ]
+          },
+          "status": "passed",
+          "finishedAt": "2026-03-23T13:40:23.837Z"
+        },
+        {
+          "name": "global center session memory restore",
+          "startedAt": "2026-03-23T13:40:23.837Z",
+          "data": {
+            "rowBeforeMeta": {
+              "activeView": "temp",
+              "search": "奶茶"
+            },
+            "rowAfterMeta": {
+              "activeView": "temp",
+              "search": "奶茶"
+            },
+            "rowScopeBefore": {
+              "text": "Scope: formal loaded 3/4 (base 2, max 10), temp loaded 1/1 (base 1, max 10), pending_link loaded 1/1 (page 1, mode cursor)",
+              "formal": {
+                "loaded": 3,
+                "requested": 4,
+                "base": 2,
+                "max": 10
+              },
+              "temp": {
+                "loaded": 1,
+                "requested": 1,
+                "base": 1,
+                "max": 10
+              },
+              "pendingLink": {
+                "loaded": 1,
+                "requested": 1,
+                "pageSize": 1,
+                "mode": "cursor"
+              }
+            },
+            "rowScopeAfter": {
+              "text": "Scope: formal loaded 3/4 (base 2, max 10), temp loaded 1/1 (base 1, max 10), pending_link loaded 1/1 (page 1, mode cursor) · session-restored",
+              "formal": {
+                "loaded": 3,
+                "requested": 4,
+                "base": 2,
+                "max": 10
+              },
+              "temp": {
+                "loaded": 1,
+                "requested": 1,
+                "base": 1,
+                "max": 10
+              },
+              "pendingLink": {
+                "loaded": 1,
+                "requested": 1,
+                "pageSize": 1,
+                "mode": "cursor"
+              }
+            },
+            "pendingBefore": {
+              "text": "Scope: formal loaded 2/2 (base 2, max 10), temp loaded 1/1 (base 1, max 10), pending_link loaded 3/3 (page 1, mode cursor)",
+              "formal": {
+                "loaded": 2,
+                "requested": 2,
+                "base": 2,
+                "max": 10
+              },
+              "temp": {
+                "loaded": 1,
+                "requested": 1,
+                "base": 1,
+                "max": 10
+              },
+              "pendingLink": {
+                "loaded": 3,
+                "requested": 3,
+                "pageSize": 1,
+                "mode": "cursor"
+              }
+            },
+            "pendingAfter": {
+              "text": "Scope: formal loaded 2/2 (base 2, max 10), temp loaded 1/1 (base 1, max 10), pending_link loaded 3/3 (page 1, mode cursor) · session-restored",
+              "formal": {
+                "loaded": 2,
+                "requested": 2,
+                "base": 2,
+                "max": 10
+              },
+              "temp": {
+                "loaded": 1,
+                "requested": 1,
+                "base": 1,
+                "max": 10
+              },
+              "pendingLink": {
+                "loaded": 3,
+                "requested": 3,
+                "pageSize": 1,
+                "mode": "cursor"
+              }
+            },
+            "pendingBeforeCount": 3,
+            "pendingAfterCount": 3,
+            "pendingBeforeBtn": {
+              "disabled": false,
+              "loadState": "ready",
+              "loadMode": "cursor",
+              "text": "pending +1 (cursor 正常) loaded 3 / req 3 / max 10 next -> 4"
+            },
+            "pendingAfterBtn": {
+              "disabled": false,
+              "loadState": "ready",
+              "loadMode": "cursor",
+              "text": "pending +1 (cursor 正常) loaded 3 / req 3 / max 10 next -> 4"
+            },
+            "pendingContinueCount": 4,
+            "pendingNoMoreBtn": {
+              "disabled": true,
+              "loadState": "no_more",
+              "loadMode": "cursor",
+              "text": "pending 已无更多 (cursor 正常) loaded 4 / req 4 / max 10 no more"
+            },
+            "pendingNoMoreScope": {
+              "text": "Scope: formal loaded 2/2 (base 2, max 10), temp loaded 1/1 (base 1, max 10), pending_link loaded 4/4 (page 1, mode cursor) · session-restored",
+              "formal": {
+                "loaded": 2,
+                "requested": 2,
+                "base": 2,
+                "max": 10
+              },
+              "temp": {
+                "loaded": 1,
+                "requested": 1,
+                "base": 1,
+                "max": 10
+              },
+              "pendingLink": {
+                "loaded": 4,
+                "requested": 4,
+                "pageSize": 1,
+                "mode": "cursor"
+              }
+            },
+            "pendingAfterNoMoreBtn": {
+              "disabled": true,
+              "loadState": "no_more",
+              "loadMode": "cursor",
+              "text": "pending 已无更多 (cursor 正常) loaded 4 / req 4 / max 10 no more"
+            },
+            "pendingAfterNoMoreRestore": {
+              "text": "Scope: formal loaded 2/2 (base 2, max 10), temp loaded 1/1 (base 1, max 10), pending_link loaded 4/4 (page 1, mode cursor) · session-restored",
+              "formal": {
+                "loaded": 2,
+                "requested": 2,
+                "base": 2,
+                "max": 10
+              },
+              "temp": {
+                "loaded": 1,
+                "requested": 1,
+                "base": 1,
+                "max": 10
+              },
+              "pendingLink": {
+                "loaded": 4,
+                "requested": 4,
+                "pageSize": 1,
+                "mode": "cursor"
+              }
+            },
+            "pendingAfterNoMoreCount": 4,
+            "pendingBeforeScroll": 0,
+            "pendingAfterScroll": 0
+          },
+          "status": "passed",
+          "finishedAt": "2026-03-23T13:40:26.257Z"
+        },
+        {
+          "name": "global center pending fallback-step mode",
+          "startedAt": "2026-03-23T13:40:26.257Z",
+          "data": {
+            "beforeScope": {
+              "text": "Scope: formal loaded 2/2 (base 2, max 10), temp loaded 1/1 (base 1, max 10), pending_link loaded 1/1 (page 1, mode fallback-step)",
+              "formal": {
+                "loaded": 2,
+                "requested": 2,
+                "base": 2,
+                "max": 10
+              },
+              "temp": {
+                "loaded": 1,
+                "requested": 1,
+                "base": 1,
+                "max": 10
+              },
+              "pendingLink": {
+                "loaded": 1,
+                "requested": 1,
+                "pageSize": 1,
+                "mode": "fallback-step"
+              }
+            },
+            "afterScope": {
+              "text": "Scope: formal loaded 2/2 (base 2, max 10), temp loaded 1/1 (base 1, max 10), pending_link loaded 4/5 (page 1, mode fallback-step)",
+              "formal": {
+                "loaded": 2,
+                "requested": 2,
+                "base": 2,
+                "max": 10
+              },
+              "temp": {
+                "loaded": 1,
+                "requested": 1,
+                "base": 1,
+                "max": 10
+              },
+              "pendingLink": {
+                "loaded": 4,
+                "requested": 5,
+                "pageSize": 1,
+                "mode": "fallback-step"
+              }
+            },
+            "afterExtraScope": {
+              "text": "Scope: formal loaded 2/2 (base 2, max 10), temp loaded 1/1 (base 1, max 10), pending_link loaded 4/5 (page 1, mode fallback-step)",
+              "formal": {
+                "loaded": 2,
+                "requested": 2,
+                "base": 2,
+                "max": 10
+              },
+              "temp": {
+                "loaded": 1,
+                "requested": 1,
+                "base": 1,
+                "max": 10
+              },
+              "pendingLink": {
+                "loaded": 4,
+                "requested": 5,
+                "pageSize": 1,
+                "mode": "fallback-step"
+              }
+            },
+            "beforeModeNote": "mode fallback-step\n      已降级：cursor 查询失败（fallback-step）\n      · 仍可继续加载\n      · 当前会话：按当前模式加载",
+            "afterMeta": {
+              "disabled": true,
+              "loadState": "no_more",
+              "loadMode": "fallback-step",
+              "text": "pending 已无更多 (fallback-step 降级) loaded 4 / req 5 / max 10 no more"
+            },
+            "afterCount": 4,
+            "afterExtraCount": 4,
+            "stateTrace": [
+              {
+                "phase": "before-0",
+                "disabled": false,
+                "loadState": "ready",
+                "loadMode": "fallback-step",
+                "text": "pending +1 (fallback-step 降级) loaded 1 / req 1 / max 10 next -> 2"
+              },
+              {
+                "phase": "before-1",
+                "disabled": false,
+                "loadState": "ready",
+                "loadMode": "fallback-step",
+                "text": "pending +1 (fallback-step 降级) loaded 2 / req 2 / max 10 next -> 3"
+              },
+              {
+                "phase": "before-2",
+                "disabled": false,
+                "loadState": "ready",
+                "loadMode": "fallback-step",
+                "text": "pending +1 (fallback-step 降级) loaded 3 / req 3 / max 10 next -> 4"
+              },
+              {
+                "phase": "before-3",
+                "disabled": false,
+                "loadState": "ready",
+                "loadMode": "fallback-step",
+                "text": "pending +1 (fallback-step 降级) loaded 4 / req 4 / max 10 next -> 5"
+              },
+              {
+                "phase": "before-4",
+                "disabled": true,
+                "loadState": "no_more",
+                "loadMode": "fallback-step",
+                "text": "pending 已无更多 (fallback-step 降级) loaded 4 / req 5 / max 10 no more"
+              }
+            ]
+          },
+          "status": "passed",
+          "finishedAt": "2026-03-23T13:40:27.727Z"
+        },
+        {
+          "name": "global center search and quick actions",
+          "startedAt": "2026-03-23T13:40:27.727Z",
+          "data": {
+            "rowHitCount": 1,
+            "noHitCount": 0,
+            "noHitText": "没有命中结果 未命中“no-hit-keyword-xyz”，可清空关键词或切换视角继续排查",
+            "noHitModeNote": "mode cursor\n      正常分页：nextCursor\n      · 仍可继续加载\n      · 当前会话：按当前模式加载",
+            "pendingHitCount": 1,
+            "doneActionCount": 1,
+            "scopeHint": "Scope: formal loaded 2/2 (base 2, max 10), temp loaded 1/1 (base 1, max 10), pending_link loaded 1/1 (page 1, mode cursor)",
+            "rowHitReasonText": "摘要/关键词命中",
+            "rowHitTagCount": 1,
+            "voucherHitTagCount": 1
+          },
+          "status": "passed",
+          "finishedAt": "2026-03-23T13:40:29.300Z"
+        },
+        {
+          "name": "global center pending cursor after relink and continue load",
+          "startedAt": "2026-03-23T13:40:29.300Z",
+          "data": {
+            "loaded3Count": 3,
+            "afterRelinkCount": 2,
+            "afterContinueCount": 3,
+            "uniqueCount": 3,
+            "scopeInfo": {
+              "text": "Scope: formal loaded 2/2 (base 2, max 10), temp loaded 1/1 (base 1, max 10), pending_link loaded 3/3 (page 1, mode cursor)",
+              "formal": {
+                "loaded": 2,
+                "requested": 2,
+                "base": 2,
+                "max": 10
+              },
+              "temp": {
+                "loaded": 1,
+                "requested": 1,
+                "base": 1,
+                "max": 10
+              },
+              "pendingLink": {
+                "loaded": 3,
+                "requested": 3,
+                "pageSize": 1,
+                "mode": "cursor"
+              }
+            },
+            "entryIds": [
+              "pending:voucher_relink",
+              "pending:voucher_done",
+              "pending:voucher_page4"
+            ]
+          },
+          "status": "passed",
+          "finishedAt": "2026-03-23T13:40:31.239Z"
+        },
+        {
+          "name": "difficulty-center filters",
+          "startedAt": "2026-03-23T13:40:31.239Z",
+          "data": {
+            "allCount": 4,
+            "matchingCount": 2,
+            "dedupeCount": 1,
+            "tempCount": 1
+          },
+          "status": "passed",
+          "finishedAt": "2026-03-23T13:40:31.462Z"
+        },
+        {
+          "name": "search and filter linkage",
+          "startedAt": "2026-03-23T13:40:31.462Z",
+          "data": {
+            "searchAllCount": 1,
+            "searchMatchingCount": 1,
+            "matchingAfterClear": 2
+          },
+          "status": "passed",
+          "finishedAt": "2026-03-23T13:40:31.918Z"
+        },
+        {
+          "name": "mark done hides matching item",
+          "startedAt": "2026-03-23T13:40:31.918Z",
+          "data": {
+            "matchingCount": 1
+          },
+          "status": "passed",
+          "finishedAt": "2026-03-23T13:40:32.293Z"
+        },
+        {
+          "name": "pending_link relink chain",
+          "startedAt": "2026-03-23T13:40:32.293Z",
+          "data": {
+            "matchingCount": 0
+          },
+          "status": "passed",
+          "finishedAt": "2026-03-23T13:40:32.734Z"
+        },
+        {
+          "name": "dedupe actions and detail jump",
+          "startedAt": "2026-03-23T13:40:32.734Z",
+          "data": {
+            "dedupeCount": 1,
+            "dedupeAfterDone": 0
+          },
+          "status": "passed",
+          "finishedAt": "2026-03-23T13:40:33.479Z"
+        },
+        {
+          "name": "temp to formal duplicate warning flow",
+          "startedAt": "2026-03-23T13:40:33.479Z",
+          "data": {
+            "tempBefore": 1,
+            "tempAfter": 0
+          },
+          "status": "passed",
+          "finishedAt": "2026-03-23T13:40:33.970Z"
+        },
+        {
+          "name": "strategy final behavior",
+          "startedAt": "2026-03-23T13:40:33.970Z",
+          "data": {
+            "allCount": 0,
+            "dedupeCount": 0
+          },
+          "status": "passed",
+          "finishedAt": "2026-03-23T13:40:34.122Z"
+        }
+      ],
+      "requestfailed": [],
+      "pageerrors": [],
+      "console": [
+        {
+          "type": "log",
+          "text": "[App] SW 注册成功，scope: /"
+        }
+      ],
+      "screenshots": [
+        "E:\\rmm-2sys\\rmm-workspace\\2.V2rmm\\qa-artifacts\\difficulty-center\\manual_resolve-00-shell.png",
+        "E:\\rmm-2sys\\rmm-workspace\\2.V2rmm\\qa-artifacts\\difficulty-center\\manual_resolve-01-settings-strategy.png",
+        "E:\\rmm-2sys\\rmm-workspace\\2.V2rmm\\qa-artifacts\\difficulty-center\\manual_resolve-02-global-entry-converge.png",
+        "E:\\rmm-2sys\\rmm-workspace\\2.V2rmm\\qa-artifacts\\difficulty-center\\manual_resolve-03-global-load-more.png",
+        "E:\\rmm-2sys\\rmm-workspace\\2.V2rmm\\qa-artifacts\\difficulty-center\\manual_resolve-03c-global-pending-cursor-states.png",
+        "E:\\rmm-2sys\\rmm-workspace\\2.V2rmm\\qa-artifacts\\difficulty-center\\manual_resolve-03a-global-pending-same-updatedAt.png",
+        "E:\\rmm-2sys\\rmm-workspace\\2.V2rmm\\qa-artifacts\\difficulty-center\\manual_resolve-03c-global-session-memory.png",
+        "E:\\rmm-2sys\\rmm-workspace\\2.V2rmm\\qa-artifacts\\difficulty-center\\manual_resolve-03b-global-pending-fallback-step.png",
+        "E:\\rmm-2sys\\rmm-workspace\\2.V2rmm\\qa-artifacts\\difficulty-center\\manual_resolve-03-global-search-actions.png",
+        "E:\\rmm-2sys\\rmm-workspace\\2.V2rmm\\qa-artifacts\\difficulty-center\\manual_resolve-04-global-pending-cursor-relink.png",
+        "E:\\rmm-2sys\\rmm-workspace\\2.V2rmm\\qa-artifacts\\difficulty-center\\manual_resolve-04-filters.png",
+        "E:\\rmm-2sys\\rmm-workspace\\2.V2rmm\\qa-artifacts\\difficulty-center\\manual_resolve-05-search-linkage.png",
+        "E:\\rmm-2sys\\rmm-workspace\\2.V2rmm\\qa-artifacts\\difficulty-center\\manual_resolve-06-matching-done.png",
+        "E:\\rmm-2sys\\rmm-workspace\\2.V2rmm\\qa-artifacts\\difficulty-center\\manual_resolve-07-relink-picker.png",
+        "E:\\rmm-2sys\\rmm-workspace\\2.V2rmm\\qa-artifacts\\difficulty-center\\manual_resolve-08-dedupe-open-left.png",
+        "E:\\rmm-2sys\\rmm-workspace\\2.V2rmm\\qa-artifacts\\difficulty-center\\manual_resolve-09-dedupe-done.png",
+        "E:\\rmm-2sys\\rmm-workspace\\2.V2rmm\\qa-artifacts\\difficulty-center\\manual_resolve-10-promote-warning.png",
+        "E:\\rmm-2sys\\rmm-workspace\\2.V2rmm\\qa-artifacts\\difficulty-center\\manual_resolve-11-final-state.png"
+      ],
+      "failures": [],
+      "finishedAt": "2026-03-23T13:40:34.122Z"
+    }
+  ],
+  "failures": [],
+  "finishedAt": "2026-03-23T13:40:34.136Z"
+}
