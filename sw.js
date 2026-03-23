@@ -9,20 +9,22 @@ const CACHE_VERSION   = "duka-v2-v1";
 const SHELL_CACHE     = `${CACHE_VERSION}-shell`;
 const IMG_CACHE       = `${CACHE_VERSION}-images`;
 const API_CACHE       = `${CACHE_VERSION}-api`;
+const APP_SCOPE_PATH  = new URL("./", self.registration.scope).pathname;
+const API_SCOPE_PATH  = new URL("./api/", self.registration.scope).pathname;
 
 // App Shell 资源（安装时预缓存）
 const SHELL_URLS = [
-  "/",
-  "/index.html",
-  "/js/core-config.js",
-  "/js/api-bridge.js",
-  "/js/ui-layout.js",
-  "/js/feature-logic.js",
-  "/js/match-engine.js",
-  "/manifest.json",
-  "/icons/icon-192.png",
-  "/icons/icon-512.png",
-];
+  "./",
+  "./index.html",
+  "./js/core-config.js",
+  "./js/api-bridge.js",
+  "./js/ui-layout.js",
+  "./js/feature-logic.js",
+  "./js/match-engine.js",
+  "./manifest.json",
+  "./icons/icon-192.png",
+  "./icons/icon-512.png",
+].map((asset) => new URL(asset, self.registration.scope).pathname);
 
 // ── 安装：预缓存 App Shell ────────────────────────────
 
@@ -62,6 +64,7 @@ self.addEventListener("activate", (event) => {
 self.addEventListener("fetch", (event) => {
   const { request } = event;
   const url = new URL(request.url);
+  const inScope = url.pathname.startsWith(APP_SCOPE_PATH);
 
   // 非 GET 请求（POST 等）不走缓存
   if (request.method !== "GET") return;
@@ -71,7 +74,7 @@ self.addEventListener("fetch", (event) => {
     url.hostname.includes("firestore.googleapis.com") ||
     url.hostname.includes("cloudfunctions.net")       ||
     url.hostname.includes("yourdomain.com")            ||  // Cloudflare Worker 域名
-    url.pathname.startsWith("/api/")
+    url.pathname.startsWith(API_SCOPE_PATH)
   ) {
     event.respondWith(networkFirst(request, API_CACHE, 10_000));
     return;
@@ -88,12 +91,14 @@ self.addEventListener("fetch", (event) => {
 
   // App Shell（JS / HTML / CSS / 图标）：Cache First + 后台更新
   if (
-    url.pathname.endsWith(".js")   ||
-    url.pathname.endsWith(".css")  ||
-    url.pathname.endsWith(".html") ||
-    url.pathname.endsWith(".png")  ||
-    url.pathname.endsWith(".svg")  ||
-    url.pathname === "/"
+    (inScope && (
+      url.pathname.endsWith(".js")   ||
+      url.pathname.endsWith(".css")  ||
+      url.pathname.endsWith(".html") ||
+      url.pathname.endsWith(".png")  ||
+      url.pathname.endsWith(".svg")  ||
+      url.pathname === APP_SCOPE_PATH
+    ))
   ) {
     event.respondWith(staleWhileRevalidate(request, SHELL_CACHE));
     return;
@@ -173,7 +178,7 @@ function offlineResponse(request) {
 
   // HTML 页面降级到 App Shell
   if (request.headers.get("accept")?.includes("text/html")) {
-    return caches.match("/index.html").then(
+    return caches.match(new URL("./index.html", self.registration.scope).pathname).then(
       (cached) => cached || new Response("离线中，请检查网络连接", {
         status: 503,
         headers: { "Content-Type": "text/plain; charset=utf-8" },
@@ -183,7 +188,7 @@ function offlineResponse(request) {
 
   // API 请求降级到离线 JSON
   if (
-    url.pathname.startsWith("/api/") ||
+    url.pathname.startsWith(API_SCOPE_PATH) ||
     url.hostname.includes("firestore.googleapis.com")
   ) {
     return new Response(

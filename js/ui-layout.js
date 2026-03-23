@@ -106,6 +106,10 @@ export function showAppShell() {
     <header class="bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800 px-4 pt-3 pb-3 flex-shrink-0">
       <div class="flex items-center justify-between mb-2">
         <h1 class="text-base font-medium text-gray-900 dark:text-gray-100">RMM 账本 V2</h1>
+        <span id="network-route-badge"
+          class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-medium bg-gray-100 text-gray-500 mr-2">
+          自动路由
+        </span>
         <button id="month-picker" class="text-xs text-gray-400 dark:text-gray-500 flex items-center gap-1">
           <span id="current-month-label">2026年3月</span>
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
@@ -139,6 +143,7 @@ export function showAppShell() {
       <div id="pane-flow"  class="pane absolute inset-0 overflow-y-auto overscroll-contain px-3 py-2"></div>
       <div id="pane-cal"   class="pane hidden absolute inset-0 overflow-y-auto overscroll-contain px-3 py-2"></div>
       <div id="pane-stats" class="pane hidden absolute inset-0 overflow-y-auto overscroll-contain px-3 py-3"></div>
+      <div id="pane-settings" class="pane hidden absolute inset-0 overflow-y-auto overscroll-contain px-3 py-3"></div>
     </main>
 
     <!-- 悬浮 FAB -->
@@ -480,27 +485,95 @@ export function renderShadowMonitor(logs) {
  * 渲染并打开九宫格功能抽屉
  * @param {(action: string) => void} onKeyAction
  */
-export function openDrawer(onKeyAction) {
+export function openDrawer(onKeyAction, options = {}) {
   const overlay = $("#drawer-overlay");
   const panel   = $("#drawer-panel");
   const grid    = $("#drawer-grid");
   if (!overlay || !panel || !grid) return;
 
-  // 渲染九宫格按钮
-  grid.innerHTML = KEY_MAP.map((key) => `
-    <button class="drawer-key flex flex-col items-center gap-1.5 bg-gray-50 dark:bg-gray-800
-                   border border-gray-100 dark:border-gray-700 rounded-xl py-3 px-2
-                   active:bg-gray-100 dark:active:bg-gray-700 transition-colors"
-            data-action="${key.action}">
-      <svg class="w-5 h-5 text-purple-500 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="${key.icon}"/>
-      </svg>
-      <span class="text-[10px] font-medium text-gray-700 dark:text-gray-300 text-center leading-tight">${key.label}</span>
-      <span class="text-[9px] text-gray-400">⌘${key.id}</span>
-    </button>`).join("");
+  const disabledActions = new Set(options.disabledActions || []);
+  const hiddenActions = new Set(options.hiddenActions || []);
+  const visibleKeys   = KEY_MAP.filter((key) => !hiddenActions.has(key.action));
+  const keyByAction   = new Map(visibleKeys.map((key) => [key.action, key]));
+
+  const primary = [keyByAction.get("openQuickEntry")].filter(Boolean);
+  const secondary = ["openBatchText", "openBatchMatching", "openShadowMonitor"]
+    .map((action) => keyByAction.get(action))
+    .filter(Boolean);
+  const secondarySet = new Set(secondary.map((k) => k.action));
+  const primarySet = new Set(primary.map((k) => k.action));
+  const developing = visibleKeys.filter((key) => !primarySet.has(key.action) && !secondarySet.has(key.action));
+
+  function renderKey(key, tier, forceDisabled = false) {
+    const isDisabled = forceDisabled || disabledActions.has(key.action);
+    const footerText = isDisabled ? "开发中" : `⌘${key.id}`;
+    const disabledAttr = isDisabled ? 'aria-disabled="true"' : "";
+
+    if (tier === "primary") {
+      return `
+      <button class="drawer-key col-span-3 flex items-center gap-3 rounded-xl px-3 py-3
+                     bg-purple-600 hover:bg-purple-700 text-white shadow-sm transition-colors
+                     ${isDisabled ? "opacity-45 cursor-not-allowed" : ""}"
+              data-action="${key.action}"
+              data-label="${key.label}"
+              data-tier="primary"
+              data-disabled="${isDisabled ? "true" : "false"}"
+              ${disabledAttr}>
+        <span class="w-9 h-9 rounded-xl bg-white/15 flex items-center justify-center flex-shrink-0">
+          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="${key.icon}"/>
+          </svg>
+        </span>
+        <span class="flex-1 min-w-0 text-left">
+          <span class="block text-sm font-semibold truncate">${key.label}</span>
+          <span class="block text-[10px] text-white/80 truncate">${key.desc || "主入口"}</span>
+        </span>
+        <span class="text-[10px] text-white/80">${footerText}</span>
+      </button>`;
+    }
+
+    const secondaryClass = tier === "secondary"
+      ? "bg-gray-50 dark:bg-gray-800 border-gray-100 dark:border-gray-700"
+      : "bg-gray-100/90 dark:bg-gray-800/80 border-gray-200 dark:border-gray-700 border-dashed";
+    const disabledClass = isDisabled
+      ? "opacity-45 cursor-not-allowed"
+      : "active:bg-gray-100 dark:active:bg-gray-700";
+    const footerClass = isDisabled ? "text-[9px] text-amber-500" : "text-[9px] text-gray-400";
+
+    return `
+      <button class="drawer-key flex flex-col items-center gap-1.5 border rounded-xl py-3 px-2
+                     transition-colors ${secondaryClass} ${disabledClass}"
+              data-action="${key.action}"
+              data-label="${key.label}"
+              data-tier="${tier}"
+              data-disabled="${isDisabled ? "true" : "false"}"
+              ${disabledAttr}>
+        <svg class="w-5 h-5 text-purple-500 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="${key.icon}"/>
+        </svg>
+        <span class="text-[10px] font-medium text-gray-700 dark:text-gray-300 text-center leading-tight">${key.label}</span>
+        <span class="${footerClass}">${footerText}</span>
+      </button>`;
+  }
+
+  const sections = [];
+  if (primary.length) {
+    sections.push(`<p class="col-span-3 text-[10px] text-gray-400 px-1">主入口</p>`);
+    sections.push(renderKey(primary[0], "primary"));
+  }
+  if (secondary.length) {
+    sections.push(`<p class="col-span-3 text-[10px] text-gray-400 px-1 mt-1">辅助工具</p>`);
+    sections.push(...secondary.map((key) => renderKey(key, "secondary")));
+  }
+  if (developing.length) {
+    sections.push(`<p class="col-span-3 text-[10px] text-amber-500 px-1 mt-1">开发中（暂不可用）</p>`);
+    sections.push(...developing.map((key) => renderKey(key, "developing", true)));
+  }
+  grid.innerHTML = sections.join("");
 
   // 绑定点击
   grid.querySelectorAll(".drawer-key").forEach((btn) => {
+    if (btn.dataset.disabled === "true") return;
     btn.addEventListener("click", () => {
       closeDrawer();
       onKeyAction(btn.dataset.action);
@@ -584,6 +657,30 @@ export function showToast(message, type = "info", duration = 3000) {
  * 设置加载状态（全局 spinner 或骨架屏）
  * @param {boolean} loading
  */
+export function setNetworkRouteBadge(routeState = {}) {
+  const el = $("#network-route-badge");
+  if (!el) return;
+
+  const channel = routeState.channel || "auto";
+  const healthy = routeState.healthy;
+  let text = "自动路由";
+  let cls = "bg-gray-100 text-gray-500";
+
+  if (channel === "internal") {
+    text = healthy === false ? "内网异常" : "内网";
+    cls = healthy === false ? "bg-amber-100 text-amber-700" : "bg-emerald-100 text-emerald-700";
+  } else if (channel === "external") {
+    text = healthy === false ? "外网兜底" : "外网";
+    cls = healthy === false ? "bg-amber-100 text-amber-700" : "bg-sky-100 text-sky-700";
+  } else if (channel === "single") {
+    text = "单路由";
+    cls = "bg-gray-100 text-gray-600";
+  }
+
+  el.textContent = text;
+  el.className = `inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-medium mr-2 ${cls}`;
+}
+
 export function setLoadingState(loading) {
   const pane = $("#pane-flow");
   if (!pane) return;

@@ -11,6 +11,11 @@ const ENV = (typeof window !== "undefined" && window.__ENV__) || {};
 export const APP_CONFIG = Object.freeze({
   // Cloudflare Worker 代理入口（国内免翻墙）
   WORKER_URL: ENV.WORKER_URL || "https://api.yourdomain.com",
+  WORKER_URL_INTERNAL: ENV.WORKER_URL_INTERNAL || ENV.WORKER_URL || "",
+  WORKER_URL_EXTERNAL: ENV.WORKER_URL_EXTERNAL || ENV.WORKER_URL || "",
+  WORKER_PING_PATH: ENV.WORKER_PING_PATH || "/ping",
+  WORKER_PROBE_TIMEOUT_MS: Number(ENV.WORKER_PROBE_TIMEOUT_MS || 1800),
+  WORKER_ROUTE_CACHE_TTL_MS: Number(ENV.WORKER_ROUTE_CACHE_TTL_MS || 300000),
 
   // V1 GAS 接口（首月双写影子备份，过渡期结束后删除此行）
   GAS_V1_URL: ENV.GAS_V1_URL || "",

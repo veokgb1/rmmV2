@@ -14,11 +14,11 @@
   <title>RMM 账本 V2</title>
 
   <!-- PWA Manifest -->
-  <link rel="manifest" href="/manifest.json">
+  <link rel="manifest" href="./manifest.json">
 
   <!-- Favicon & Apple 图标 -->
-  <link rel="icon" href="/icons/icon-192.png" type="image/png">
-  <link rel="apple-touch-icon" href="/icons/icon-192.png">
+  <link rel="icon" href="./icons/icon-192.png" type="image/png">
+  <link rel="apple-touch-icon" href="./icons/icon-192.png">
 
   <!-- Tailwind CSS（CDN，生产环境应换为编译后的 CSS） -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -181,7 +181,9 @@
 
     // 注册 Service Worker
     if ("serviceWorker" in navigator) {
-      navigator.serviceWorker.register("/sw.js", { scope: "/" })
+      const swUrl = new URL("./sw.js", window.location.href);
+      const swScope = new URL("./", window.location.href).pathname;
+      navigator.serviceWorker.register(swUrl.href, { scope: swScope })
         .then((reg) => {
           console.log("[App] SW 注册成功，scope:", reg.scope);
         })

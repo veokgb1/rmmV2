@@ -32,6 +32,15 @@ async function authModules() {
 // ── 内部 Token 缓存 ───────────────────────────────────
 let _cachedToken    = null;
 let _tokenExpiresAt = 0;
+const ROUTE_CACHE_KEY = "rmm_v2_worker_route";
+const ROUTE_CACHE_VER = 1;
+let _routeState = {
+  channel: "auto",
+  baseUrl: "",
+  source: "init",
+  healthy: null,
+  updatedAt: 0,
+};
 
 async function getIdToken(forceRefresh = false) {
   const { auth } = getFirebaseApp();
@@ -52,14 +61,154 @@ async function getIdToken(forceRefresh = false) {
  * @param {object} payload
  * @returns {Promise<object>}
  */
-async function workerPost(action, payload = {}) {
-  const token = await getIdToken();
+function normalizeBase(url) {
+  return String(url || "").trim().replace(/\/+$/, "");
+}
+
+function isPublicWebHost() {
+  if (typeof window === "undefined") return false;
+  const host = String(window.location.hostname || "").toLowerCase();
+  if (!host || host === "localhost" || host === "127.0.0.1" || host.endsWith(".local")) return false;
+  if (/^(10\.|192\.168\.|172\.(1[6-9]|2\d|3[0-1])\.)/.test(host)) return false;
+  return true;
+}
+
+function getProbeTimeoutMs() {
+  const configured = Number(APP_CONFIG.WORKER_PROBE_TIMEOUT_MS || 1800);
+  if (!isPublicWebHost()) return configured;
+  return Math.min(configured, 900);
+}
+
+function routeCandidates() {
+  const internal = normalizeBase(APP_CONFIG.WORKER_URL_INTERNAL);
+  const external = normalizeBase(APP_CONFIG.WORKER_URL_EXTERNAL);
+  const candidates = [];
+  if (internal) candidates.push({ channel: "internal", baseUrl: internal });
+  if (external && external !== internal) candidates.push({ channel: "external", baseUrl: external });
+  if (!candidates.length) candidates.push({ channel: "single", baseUrl: normalizeBase(APP_CONFIG.WORKER_URL) });
+  if (isPublicWebHost() && candidates.length > 1) {
+    candidates.sort((a, b) => {
+      if (a.channel === "external" && b.channel !== "external") return -1;
+      if (b.channel === "external" && a.channel !== "external") return 1;
+      return 0;
+    });
+  }
+  return candidates.filter((c) => !!c.baseUrl);
+}
+
+function emitRouteState(partial) {
+  _routeState = { ..._routeState, ...partial, updatedAt: Date.now() };
+  if (typeof window !== "undefined") {
+    window.dispatchEvent(new CustomEvent("rmm:network-route", { detail: { ..._routeState } }));
+  }
+}
+
+function readRouteCache() {
+  try {
+    const raw = localStorage.getItem(ROUTE_CACHE_KEY);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw);
+    if (parsed?.ver !== ROUTE_CACHE_VER) return null;
+    if (!parsed?.baseUrl || !parsed?.channel || !parsed?.expiresAt) return null;
+    return parsed;
+  } catch {
+    return null;
+  }
+}
+
+function saveRouteCache(route) {
+  try {
+    localStorage.setItem(ROUTE_CACHE_KEY, JSON.stringify({
+      ver: ROUTE_CACHE_VER,
+      channel: route.channel,
+      baseUrl: route.baseUrl,
+      expiresAt: Date.now() + APP_CONFIG.WORKER_ROUTE_CACHE_TTL_MS,
+    }));
+  } catch {}
+}
+
+function pingUrl(baseUrl) {
+  const p = APP_CONFIG.WORKER_PING_PATH || "/ping";
+  return `${baseUrl}${p.startsWith("/") ? p : `/${p}`}`;
+}
+
+async function probeRoute(route) {
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), getProbeTimeoutMs());
+  try {
+    const resp = await fetch(`${pingUrl(route.baseUrl)}?_=${Date.now()}`, {
+      method: "GET",
+      cache: "no-store",
+      signal: ctrl.signal,
+    });
+    return resp.ok;
+  } catch {
+    return false;
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+export function getNetworkRouteState() {
+  return { ..._routeState };
+}
+
+export function __debugResetNetworkRoute() {
+  _routeState = {
+    channel: "auto",
+    baseUrl: "",
+    source: "init",
+    healthy: null,
+    updatedAt: 0,
+  };
+  try { localStorage.removeItem(ROUTE_CACHE_KEY); } catch {}
+}
+
+export async function resolveWorkerRoute({ forceProbe = false } = {}) {
+  const candidates = routeCandidates();
+  if (!candidates.length) throw new ApiError("Worker URL not configured", 500);
+
+  if (candidates.length === 1) {
+    emitRouteState({ ...candidates[0], source: "single", healthy: true });
+    return candidates[0];
+  }
+
+  const cache = readRouteCache();
+  if (!forceProbe && cache && cache.expiresAt > Date.now()) {
+    const hit = candidates.find((c) => c.baseUrl === normalizeBase(cache.baseUrl));
+    if (hit) {
+      emitRouteState({ ...hit, source: "cache", healthy: true });
+      return hit;
+    }
+  }
+
+  for (const c of candidates) {
+    // eslint-disable-next-line no-await-in-loop
+    if (await probeRoute(c)) {
+      saveRouteCache(c);
+      emitRouteState({ ...c, source: "probe", healthy: true });
+      return c;
+    }
+  }
+
+  if (cache) {
+    const stale = candidates.find((c) => c.baseUrl === normalizeBase(cache.baseUrl));
+    if (stale) {
+      emitRouteState({ ...stale, source: "fallback", healthy: false });
+      return stale;
+    }
+  }
+
+  emitRouteState({ ...candidates[0], source: "fallback", healthy: false });
+  return candidates[0];
+}
+
+async function postWorker(baseUrl, token, action, payload = {}) {
   const ctrl  = new AbortController();
   const timer = setTimeout(() => ctrl.abort(), APP_CONFIG.REQUEST_TIMEOUT_MS);
-
   let resp;
   try {
-    resp = await fetch(APP_CONFIG.WORKER_URL, {
+    resp = await fetch(baseUrl, {
       method:  "POST",
       headers: {
         "Content-Type":  "application/json",
@@ -71,10 +220,31 @@ async function workerPost(action, payload = {}) {
   } finally {
     clearTimeout(timer);
   }
-
   const data = await resp.json();
-  if (!data.ok) throw new ApiError(data.error || "Worker 返回错误", resp.status);
+  if (!data.ok) throw new ApiError(data.error || "Worker returned error", resp.status);
   return data;
+}
+
+async function workerPost(action, payload = {}) {
+  const token = await getIdToken();
+  try {
+    const route = await resolveWorkerRoute();
+    return await postWorker(route.baseUrl, token, action, payload);
+  } catch (err) {
+    const retryable =
+      err?.name === "AbortError" ||
+      err instanceof TypeError ||
+      (err instanceof ApiError && err.status >= 500);
+    if (!retryable) throw err;
+
+    const current = getNetworkRouteState();
+    const alt = routeCandidates().find((c) => c.baseUrl !== normalizeBase(current.baseUrl));
+    if (!alt) throw err;
+
+    saveRouteCache(alt);
+    emitRouteState({ ...alt, source: "fallback", healthy: true });
+    return await postWorker(alt.baseUrl, token, action, payload);
+  }
 }
 
 // ── 核心业务：提交账目（含双写容错，铁律二核心）────────
@@ -155,7 +325,8 @@ async function shadowWriteToGas(txData, firestoreId) {
   try {
     const token = await getIdToken().catch(() => "");
     if (token) {
-      await fetch(APP_CONFIG.WORKER_URL, {
+      const route = await resolveWorkerRoute().catch(() => ({ baseUrl: APP_CONFIG.WORKER_URL }));
+      await fetch(route.baseUrl, {
         method:  "POST",
         headers: {
           "Content-Type":  "application/json",
