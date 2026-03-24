@@ -603,6 +603,31 @@ async function openBatchMatching() {
 // 鈹€鈹€ 鍔熻兘 鈶ｏ細蹇嵎璁拌处 鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€
 
 function openQuickEntry() {
+  const getToday = () => {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, "0");
+    const day = String(now.getDate()).padStart(2, "0");
+    return `${year}-${month}-${day}`;
+  };
+
+  const buildLocalCandidate = (text) => {
+    const amountMatch = text.match(/\d+(?:\.\d+)?/);
+    let category = "\u5176\u4ed6";
+    if (/\u6253\u8f66/.test(text)) category = "\u4ea4\u901a";
+    else if (/\u5348\u996d|\u665a\u996d|\u65e9\u9910|\u5403/.test(text)) category = "\u9910\u996e";
+    else if (/\u623f\u79df/.test(text)) category = "\u5c45\u4f4f";
+    else if (/\u5de5\u8d44|\u6536\u5165/.test(text)) category = "\u6536\u5165";
+
+    return {
+      summary: text.slice(0, 16),
+      amount: amountMatch ? amountMatch[0] : "",
+      type: /\u6536\u5165|\u5de5\u8d44/.test(text) ? "\u6536\u5165" : "\u652f\u51fa",
+      date: getToday(),
+      category,
+    };
+  };
+
   const overlay = createModalOverlay();
   overlay.innerHTML = `
     <div class="bg-white dark:bg-gray-900 rounded-2xl mx-4 w-full max-w-sm p-5">
@@ -629,6 +654,11 @@ function openQuickEntry() {
           placeholder="\u8f93\u5165\u4e00\u53e5\u8bdd\uff0c\u4f8b\u5982\uff1a\u4eca\u5929\u6253\u8f6630\uff0c\u5348\u996d15"></textarea>
       </section>
 
+      <section id="quick-candidate-wrap" class="hidden rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/80 p-3 mb-4">
+        <p class="text-sm font-medium text-gray-800 dark:text-gray-200">\u5019\u9009\u8bb0\u5f55</p>
+        <div id="quick-candidate" class="mt-2 space-y-2 text-xs text-gray-600 dark:text-gray-300"></div>
+      </section>
+
       <div class="flex gap-2">
         <button id="quick-close" class="px-4 py-2 rounded-xl border border-gray-200 dark:border-gray-700 text-xs text-gray-600 dark:text-gray-300">
           \u5173\u95ed
@@ -644,6 +674,9 @@ function openQuickEntry() {
 
   const imageInput = overlay.querySelector("#quick-image-input");
   const imageName  = overlay.querySelector("#quick-image-name");
+  const textInput = overlay.querySelector("#quick-text");
+  const candidateWrap = overlay.querySelector("#quick-candidate-wrap");
+  const candidateEl = overlay.querySelector("#quick-candidate");
   imageInput?.addEventListener("change", () => {
     const file = imageInput.files && imageInput.files[0];
     imageName.textContent = file ? file.name : "\u5c1a\u672a\u9009\u62e9\u6587\u4ef6";
@@ -651,7 +684,37 @@ function openQuickEntry() {
 
   overlay.querySelector("#quick-close")?.addEventListener("click", () => overlay.remove());
   overlay.querySelector("#quick-coming-soon")?.addEventListener("click", () => {
-    showToast("\u540e\u7eed\u7248\u672c\u5f00\u653e", "info", 2000);
+    const text = textInput?.value.trim() || "";
+    if (!text) {
+      showToast("\u8bf7\u5148\u8f93\u5165\u5185\u5bb9", "info", 2000);
+      return;
+    }
+
+    const candidate = buildLocalCandidate(text);
+    candidateWrap?.classList.remove("hidden");
+    candidateEl.innerHTML = `
+      <div class="rounded-xl border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-900/70 p-3 space-y-1.5">
+        <div class="flex justify-between gap-3">
+          <span class="text-gray-500 dark:text-gray-400">\u6458\u8981</span>
+          <span class="text-right text-gray-900 dark:text-gray-100">${esc(candidate.summary)}</span>
+        </div>
+        <div class="flex justify-between gap-3">
+          <span class="text-gray-500 dark:text-gray-400">\u91d1\u989d</span>
+          <span class="text-right text-gray-900 dark:text-gray-100">${esc(candidate.amount)}</span>
+        </div>
+        <div class="flex justify-between gap-3">
+          <span class="text-gray-500 dark:text-gray-400">\u6536\u652f\u7c7b\u578b</span>
+          <span class="text-right text-gray-900 dark:text-gray-100">${candidate.type}</span>
+        </div>
+        <div class="flex justify-between gap-3">
+          <span class="text-gray-500 dark:text-gray-400">\u65f6\u95f4</span>
+          <span class="text-right text-gray-900 dark:text-gray-100">${candidate.date}</span>
+        </div>
+        <div class="flex justify-between gap-3">
+          <span class="text-gray-500 dark:text-gray-400">\u5206\u7c7b\u5efa\u8bae</span>
+          <span class="text-right text-gray-900 dark:text-gray-100">${candidate.category}</span>
+        </div>
+      </div>`;
   });
 }
 
